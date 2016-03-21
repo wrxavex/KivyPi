@@ -11,7 +11,7 @@ class RootWidget(FloatLayout):
             Button(
                 text="HelloWorld",
                 size_hint=(.3, .3),
-                pos_hint={'center_x': .5, 'center_y': .5}
+                pos_hint={'center_x': .4, 'center_y': .4}
         ))
 
 
