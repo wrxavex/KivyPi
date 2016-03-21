@@ -19,7 +19,7 @@ class MainApp(App):
 
     def build(self):
         self.root = root = RootWidget()
-        root.bind(size=self.update_rect, pos=self.update_rect)
+        root.bind(size=self._update_rect, pos=self._update_rect)
 
         with root.canvas.before:
             Color(0, 1, 0, 1)
