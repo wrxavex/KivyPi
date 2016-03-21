@@ -10,7 +10,7 @@ class RootWidget(FloatLayout):
         self.add_widget(
             Button(
                 text="HelloWorld",
-                size_hint=(.5, .5),
+                size_hint=(.3, .3),
                 pos_hint={'center_x': .5, 'center_y': .5}
         ))
 
