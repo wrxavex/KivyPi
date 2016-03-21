@@ -47,7 +47,7 @@ class MainApp(App):
         c = CustomLayout()
         c.add_widget(
             AsyncImage(
-                source="http://www.stuffistumbledupon.com/wp-content/uploads/2012/04/Get-a-Girlfriend-Meme-empty-wallet.jpg",
+                source="https://lh4.ggpht.com/wKrDLLmmxjfRG2-E-k5L5BUuHWpCOe4lWRF7oVs1Gzdn5e5yvr8fj-ORTlBF43U47yI=w300",
                 size_hint=(1, .5),
                 pos_hint={'center_x':.5, 'center_y':.5}
             )
