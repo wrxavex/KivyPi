@@ -31,7 +31,7 @@ class MainApp(App):
     def build(self):
         root = RootWidget()
         c = CustomLayout()
-        root.add_wiget(c)
+        root.add_widget(c)
         c.add_widget(
             AsyncImage(
                 source="http://www.everythingzoomer.com/wp-content/uploads/2013/01/Monday-joke-289x277.jpg",
