@@ -13,8 +13,9 @@ FloatLayout:
         Button:
             text: 'Hello!'
             size_hint: .5, .5
-            pos_hint: {'center_x': .5, 'center_y': .5}
+            pos_hint: {'center_x':.5, 'center_y':.5}
         ''')
+
 
 class MainApp(App):
 
