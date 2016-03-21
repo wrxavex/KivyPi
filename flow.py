@@ -27,7 +27,7 @@ class MainApp(App):
 
         return root
 
-    def _update_rect(selfself, instance, value):
+    def _update_rect(self, instance, value):
         self.rect.pos = instance.pos
         self.rect.size = instance.size
 
