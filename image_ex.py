@@ -34,14 +34,14 @@ class MainApp(App):
         root.add_widget(c)
         c.add_widget(
             AsyncImage(
-                source="http://www.everythingzoomer.com/wp-content/uploads/2013/01/Monday-joke-289x277.jpg",
+                source="https://lh3.googleusercontent.com/xToRFw-mqA18HtizgutV0K1IouakfR8iJ3PW75u-1n1oxbP7hVfBMlgHWIwuUYKKS_s=w300",
                 size_hint=(1, .5),
                 pos_hint={'center_x':.5, 'center_y':.5}
             )
         )
         root.add_widget(
             AsyncImage(
-                    source='http://www.stuffistumbledupon.com/wp-content/uploads/2012/05/Have-you-seen-this-dog-because-its-awesome-meme-puppy-doggy.jpg'
+                    source='https://lh3.googleusercontent.com/C4ObcUQ8eb9ZRVlqJCgODNig0Y0laWmqNFGfg6h1to5GwkmZdQX4M1Lk5dbO1FYBsVA=w300'
             )
         )
         c = CustomLayout()
