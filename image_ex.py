@@ -41,7 +41,7 @@ class MainApp(App):
         )
         root.add_widget(
             AsyncImage(
-                    'http://www.stuffistumbledupon.com/wp-content/uploads/2012/05/Have-you-seen-this-dog-because-its-awesome-meme-puppy-doggy.jpg'
+                    source='http://www.stuffistumbledupon.com/wp-content/uploads/2012/05/Have-you-seen-this-dog-because-its-awesome-meme-puppy-doggy.jpg'
             )
         )
         c = CustomLayout()
