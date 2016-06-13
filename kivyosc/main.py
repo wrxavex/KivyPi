@@ -54,7 +54,7 @@ def answer_message():
 
 if __name__ == '__main__':
     osc.init()
-    oscid = osc.listen(ipAddr='127.0.0.1', port=serviceport)
+    oscid = osc.listen(ipAddr='0,0,0,0', port=serviceport)
     osc.bind(oscid,some_api_callback, '/print/pd')
 
     my_info = Info('myinfooo', 'mytexxxt')
