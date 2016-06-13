@@ -25,7 +25,7 @@ class Controller(FloatLayout):
         self.label_wid.text = 'press'
         my_info.info = 'press'
         print('button press')
-        osc.sendMsg('/print/x', [asctime(localtime()), ], ipAddr='192.168.1.141', port=serviceport)
+        osc.sendMsg('/print/x', 'send', ipAddr='192.168.1.141', port=serviceport)
 
 
 class ControllerApp(App):
@@ -43,13 +43,13 @@ class ControllerApp(App):
 
 def some_api_callback(message, *args):
     print("got a message! %s" % message)
-    answer_message()
+    # answer_message()
     my_info.info = str(message)
     print('answer message')
 
 
-def answer_message():
-    osc.sendMsg('/print/x', [asctime(localtime()), ], port=activityport)
+# def answer_message():
+    ##osc.sendMsg('/print/x', [asctime(localtime()), ],ipAddr='192.168.1.141', port=serviceport)
 
 
 if __name__ == '__main__':
