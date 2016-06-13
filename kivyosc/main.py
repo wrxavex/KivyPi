@@ -25,6 +25,7 @@ class Controller(FloatLayout):
     def do_action(self):
         self.info = 'press'+str(my_info.count)
 
+
         my_info.count += 1
         print('button press')
         osc.sendMsg('/print/x', dataArray=['/print/pd''sen2d'], ipAddr='192.168.1.139', port=activityport)
@@ -44,6 +45,12 @@ class ControllerApp(App):
 
     def update(self, nap):
         self.root.ids.my_custom_label.text = my_info.info
+        if 0 == int(my_info.info) % 3:
+            self.root.ids.my_button.background_color = (1, 1, 1, 1)
+        if 1 == int(my_info.info) % 3:
+            self.root.ids.my_button.background_color = (0, 1, 1, 1)
+        if 2 == int(my_info.info) % 3:
+            self.root.ids.my_button.background_color = (0, 0, 1, 1)
         # print('update info')
 
 
@@ -51,7 +58,7 @@ def some_api_callback(message, *args):
     print("got a message! %s" % message)
 
     # answer_message()
-    my_info.info = str(message)
+    my_info.info = str(message[3])
     # print('answer message')
 
 
@@ -64,7 +71,7 @@ if __name__ == '__main__':
     oscid = osc.listen(ipAddr='0.0.0.0', port=serviceport)
     osc.bind(oscid, some_api_callback, '/print/pd')
 
-    my_info = Info('myinfooo', 'mytexxxt', 0)
+    my_info = Info('0', 'mytexxxt', 0)
 
     Clock.schedule_interval(lambda *x: osc.readQueue(oscid), 0)
 
