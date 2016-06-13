@@ -25,7 +25,7 @@ class Controller(FloatLayout):
         self.label_wid.text = 'press'
         my_info.info = 'press'
         print('button press')
-        osc.sendMsg('/print/x', [asctime(localtime()), ], ipAddr='192.168.1.141', port=activityport)
+        osc.sendMsg('/print/x', [asctime(localtime()), ], ipAddr='192.168.1.141', port=serviceport)
 
 
 class ControllerApp(App):
