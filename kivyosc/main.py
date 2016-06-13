@@ -9,7 +9,6 @@ from kivy.properties import ObjectProperty, StringProperty
 
 serviceport = 9998
 activityport = 9999
-newest_message = ''
 
 
 class Info:
@@ -22,29 +21,24 @@ class Controller(FloatLayout):
     label_wid = ObjectProperty()
     info = StringProperty()
 
-
-
     def do_action(self):
-        self.label_wid.text = my_info.text
-        self.info = my_info.info
+        self.label_wid.text = 'press'
+        my_info.info = 'press'
         print('button press')
-        osc.sendMsg('/print/x', [asctime(localtime()), ], ipAddr='192.168.1.141', port=activityport)
-
-
+        osc.sendMsg('/print/x', [asctime(localtime()), ], ipAddr='127.0.0.1', port=activityport)
 
 
 class ControllerApp(App):
 
     def on_start(self):
-        Clock.schedule_interval(self.update, 5)
+        Clock.schedule_interval(self.update, 0)
 
     def build(self):
         return Controller(info='Hello')
 
     def update(self, nap):
-        self.root.ids.my_custom_label.text = asctime(localtime())
+        self.root.ids.my_custom_label.text = my_info.info
         # print('update info')
-
 
 
 def some_api_callback(message, *args):
@@ -56,7 +50,6 @@ def some_api_callback(message, *args):
 
 def answer_message():
     osc.sendMsg('/print/x', [asctime(localtime()), ], port=activityport)
-
 
 
 if __name__ == '__main__':
