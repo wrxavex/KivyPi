@@ -7,14 +7,15 @@ from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import ObjectProperty, StringProperty
 
-serviceport = 9998
-activityport = 9999
+serviceport = 4999
+activityport = 5000
 
 
 class Info:
-    def __init__(self, info, text):
+    def __init__(self, info, text, count):
         self.info = info
         self.text = text
+        self.count = count
 
 
 class Controller(FloatLayout):
@@ -23,15 +24,18 @@ class Controller(FloatLayout):
 
     def do_action(self):
         self.label_wid.text = 'press'
-        my_info.info = 'press'
+        self.ids.my_custom_label.text = 'press'+str(my_info.count)
+        my_info.count += 1
         print('button press')
-        osc.sendMsg('/print/x', 'send', ipAddr='192.168.1.141', port=serviceport)
+        osc.sendMsg('/print/x', dataArray=['send'], ipAddr='127.0.0.1', port=activityport)
+        print('osc send')
 
 
 class ControllerApp(App):
 
     def on_start(self):
-        Clock.schedule_interval(self.update, 0)
+        pass
+        # Clock.schedule_interval(self.update, 0)
 
     def build(self):
         return Controller(info='Hello')
@@ -43,21 +47,21 @@ class ControllerApp(App):
 
 def some_api_callback(message, *args):
     print("got a message! %s" % message)
-    # answer_message()
-    my_info.info = str(message)
+    answer_message()
+    # my_info.info = str(message)
     print('answer message')
 
 
 # def answer_message():
-    ##osc.sendMsg('/print/x', [asctime(localtime()), ],ipAddr='192.168.1.141', port=serviceport)
+    osc.sendMsg('/print/x', [asctime(localtime()), ],ipAddr='127.0.0.1', port=serviceport)
 
 
 if __name__ == '__main__':
     osc.init()
-    oscid = osc.listen(ipAddr='0,0,0,0', port=serviceport)
-    osc.bind(oscid,some_api_callback, '/print/pd')
+    oscid = osc.listen(ipAddr='0.0.0.0', port=serviceport)
+    osc.bind(oscid, some_api_callback, '/print/pd')
 
-    my_info = Info('myinfooo', 'mytexxxt')
+    my_info = Info('myinfooo', 'mytexxxt', 0)
 
     Clock.schedule_interval(lambda *x: osc.readQueue(oscid), 0)
 
