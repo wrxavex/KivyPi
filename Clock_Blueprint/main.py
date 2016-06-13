@@ -68,7 +68,6 @@ class ClockApp(App):
     sw_started = False
     sw_seconds = 0
 
-
     def on_start(self):
         Clock.schedule_interval(self.update, 0.0016)
 
