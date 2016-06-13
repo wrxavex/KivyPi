@@ -7,8 +7,8 @@ from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import ObjectProperty, StringProperty
 
-serviceport = 4999
-activityport = 5000
+serviceport = 8999
+activityport = 9999
 
 
 class Info:
@@ -27,7 +27,7 @@ class Controller(FloatLayout):
         self.ids.my_custom_label.text = 'press'+str(my_info.count)
         my_info.count += 1
         print('button press')
-        osc.sendMsg('/print/x', dataArray=['send'], ipAddr='127.0.0.1', port=activityport)
+        osc.sendMsg('/print/x', dataArray=['sen2d'], ipAddr='192.168.1.139', port=activityport)
         print('osc send')
 
 
