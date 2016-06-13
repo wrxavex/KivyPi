@@ -23,11 +23,13 @@ class Controller(FloatLayout):
     info = StringProperty()
 
     def do_action(self):
-        self.label_wid.text = 'press'
-        self.ids.my_custom_label.text = 'press'+str(my_info.count)
+        self.info = 'press'+str(my_info.count)
+
         my_info.count += 1
         print('button press')
-        osc.sendMsg('/print/x', dataArray=['sen2d'], ipAddr='192.168.1.139', port=activityport)
+        osc.sendMsg('/print/x', dataArray=['/print/pd''sen2d'], ipAddr='192.168.1.139', port=activityport)
+        osc.sendMsg('/print/pd', dataArray=['sen2d', my_info.count], ipAddr='192.168.1.141', port=serviceport)
+        osc.sendMsg('/print/pd', dataArray=['sen2d', my_info.count], ipAddr='192.168.1.139', port=serviceport)
         print('osc send')
 
 
@@ -35,7 +37,7 @@ class ControllerApp(App):
 
     def on_start(self):
         pass
-        # Clock.schedule_interval(self.update, 0)
+        Clock.schedule_interval(self.update, 0)
 
     def build(self):
         return Controller(info='Hello')
@@ -47,13 +49,14 @@ class ControllerApp(App):
 
 def some_api_callback(message, *args):
     print("got a message! %s" % message)
-    answer_message()
-    # my_info.info = str(message)
-    print('answer message')
+
+    # answer_message()
+    my_info.info = str(message)
+    # print('answer message')
 
 
 # def answer_message():
-    osc.sendMsg('/print/x', [asctime(localtime()), ],ipAddr='127.0.0.1', port=serviceport)
+   # osc.sendMsg('/print/x', [asctime(localtime()), ],ipAddr='127.0.0.1', port=serviceport)
 
 
 if __name__ == '__main__':
