@@ -242,14 +242,17 @@ def derrick_osc(message, *args):
         print ('id 1 touched')
         stopAll()
         playone(f1)
+        print('play f1')
     if int(message[2]) == 2:
         print ('id 2 touched')
         stopAll()
         playone(f2)
+        print('play f2')
     if int(message[2]) == 3:
         print ('id 3 touched')
         stopAll()
         playone(f3)
+        print ('play f3')
     if int(message[2]) == 4:
         print ('id 4 touched')
     if int(message[2]) == 5:
