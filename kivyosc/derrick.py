@@ -192,23 +192,32 @@ def stopVideo(videoins):
 
 def croparea_setter(id):
     if id == 1:
-        return "0,0,240,160"
+        crop_area = "0,0,240,160"
+        return croparea
     if id == 2:
-        return "240,0,480,160"
+        crop_area = "240,0,480,160"
+        return crop_area
     if id == 3:
-        return "480,0,720,160"
+        crop_area = "480,0,720,160"
+        return crop_area
     if id == 4:
-        return "0,160,240,320"
+        crop_area = "0,160,240,320"
+        return crop_area
     if id == 5:
-        return "240,160,480,320"
+        crop_area = "240,160,480,320"
+        return crop_area
     if id == 6:
-        return "480,160,720,320"
+        crop_area = "480,160,720,320"
+        return crop_area
     if id == 7:
-        return "0,320,240,480"
+        crop_area = "0,320,240,480"
+        return crop_area
     if id == 8:
-        return "240,320,480,480"
+        crop_area = "240,320,480,480"
+        return crop_area
     if id ==9:
-        return "480,320,720,480"
+        crop_area = "480,320,720,480"
+        return crop_area
 
 
 class MyPaintApp(App):
