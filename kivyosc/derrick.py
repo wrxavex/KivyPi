@@ -309,6 +309,7 @@ if __name__ == '__main__':
 
     Clock.schedule_interval(lambda *x: osc.readQueue(oscid), 0)
 
-    playone(my_video)
+    # playone(my_video)
+    playone(f1)
 
     MyPaintApp().run()
