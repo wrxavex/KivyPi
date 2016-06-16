@@ -269,7 +269,6 @@ def derrick_osc(message, *args):
     if int(message[2]) == 0:
         stopAll()
         playone(my_video)
-        sleep(5)
         my_id.locked = 0
         print ('Play My video')
 
