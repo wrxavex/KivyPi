@@ -240,10 +240,16 @@ def derrick_osc(message, *args):
 
     if int(message[2]) == 1:
         print ('id 1 touched')
+        stopAll()
+        playone(f1)
     if int(message[2]) == 2:
         print ('id 2 touched')
+        stopAll()
+        playone(f2)
     if int(message[2]) == 3:
         print ('id 3 touched')
+        stopAll()
+        playone(f3)
     if int(message[2]) == 4:
         print ('id 4 touched')
     if int(message[2]) == 5:
