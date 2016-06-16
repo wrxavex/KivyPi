@@ -194,7 +194,7 @@ def croparea_setter(id):
     id = int(id)
     if id == 1:
         crop_area = "0,0,240,160"
-        return croparea
+        return crop_area
     if id == 2:
         crop_area = "240,0,480,160"
         return crop_area
