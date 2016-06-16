@@ -173,10 +173,11 @@ class OmxVideoPlayer:
         self.is_playing = 0
         self.is_available = 0
         self.proc = 0
+        self.crop = "0,0,720,480"
         OmxVideoPlayer.VideoCount += 1
 
     def videoPlay(self):
-        self.proc = subprocess.Popen(['omxplayer','--no-osd', '--loop', '--win', self.pos, self.name], stdin=subprocess.PIPE)
+        self.proc = subprocess.Popen(['omxplayer','--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop], stdin=subprocess.PIPE)
 
     def videoCount(self):
         print (OmxVideoPlayer.VideoCount)
@@ -212,14 +213,6 @@ if __name__ == '__main__':
     osc.init()
     oscid = osc.listen(ipAddr='0.0.0.0', port=serviceport)
     osc.bind(oscid, derrick_osc, '/derrick/osc')
-
-    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.189', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.190', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.191', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.192', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.198', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.199', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.200', port=serviceport)
 
     Clock.schedule_interval(lambda *x: osc.readQueue(oscid), 0)
 
