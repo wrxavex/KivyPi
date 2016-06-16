@@ -3,6 +3,8 @@ from kivy.uix.widget import Widget
 from kivy.lib import osc
 import subprocess
 import set_id
+from kivy.clock import Clock
+
 
 my_id = set_id.id_setter()
 print(my_id.my_movie)
@@ -218,6 +220,8 @@ if __name__ == '__main__':
     osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.198', port=serviceport)
     osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.199', port=serviceport)
     osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.200', port=serviceport)
+
+    Clock.schedule_interval(lambda *x: osc.readQueue(oscid), 0)
 
     playone(my_video)
 
