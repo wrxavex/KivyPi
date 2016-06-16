@@ -119,41 +119,41 @@ def stopFS():
 
 def stopAll():
     if f1.is_available == 1:
+        f1.is_available = 0
+        f1.proc.stdin.write('q')
+    if f2.is_available == 1:
+        f2.is_available = 0
+        f2.proc.stdin.write('q')
+    if f3.is_available == 1:
+        f3.is_available = 0
+        f3.proc.stdin.write('q')
+    if f4.is_available == 1:
+        f4.is_available = 0
+        f4.proc.stdin.write('q')
+    if f5.is_available == 1:
+        f5.is_available = 0
+        f5.proc.stdin.write('q')
+    if f6.is_available == 1:
+        f6.is_available = 0
+        f6.proc.stdin.write('q')
+    if f7.is_available == 1:
+        f7.is_available = 0
+        f7.proc.stdin.write('q')
+    if f8.is_available == 1:
+        f8.is_available = 0
+        f8.proc.stdin.write('q')
+    if f9.is_available == 1:
+        f9.is_available = 0
+        f9.proc.stdin.write('q')
+    if v1.is_available == 1:
         v1.is_available = 0
         v1.proc.stdin.write('q')
-    if f2.is_available == 1:
+    if v2.is_available == 1:
         v2.is_available = 0
         v2.proc.stdin.write('q')
-    if f3.is_available == 1:
+    if v3.is_available == 1:
         v3.is_available = 0
         v3.proc.stdin.write('q')
-    if f4.is_available == 1:
-        v4.is_available = 0
-        v4.proc.stdin.write('q')
-    if f5.is_available == 1:
-        v4.is_available = 0
-        v4.proc.stdin.write('q')
-    if f6.is_available == 1:
-        v4.is_available = 0
-        v4.proc.stdin.write('q')
-    if f7.is_available == 1:
-        v4.is_available = 0
-        v4.proc.stdin.write('q')
-    if f8.is_available == 1:
-        v4.is_available = 0
-        v4.proc.stdin.write('q')
-    if f9.is_available == 1:
-        v4.is_available = 0
-        v4.proc.stdin.write('q')
-    if v1.is_available == 1:
-        v4.is_available = 0
-        v4.proc.stdin.write('q')
-    if v2.is_available == 1:
-        v4.is_available = 0
-        v4.proc.stdin.write('q')
-    if v3.is_available == 1:
-        v4.is_available = 0
-        v4.proc.stdin.write('q')
     if v4.is_available == 1:
         v4.is_available = 0
         v4.proc.stdin.write('q')
