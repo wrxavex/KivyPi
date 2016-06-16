@@ -294,6 +294,7 @@ my_video = OmxVideoPlayer("0,0,800,480", "0,0,720,480", my_id.my_movie)
 
 def derrick_osc(message, *args):
     if int(message[2]) != my_id.id_to_set:
+        print('random delay')
         sleep(random.uniform(0,3))
     print('got message', message[2])
     if int(message[2]) == 1:
