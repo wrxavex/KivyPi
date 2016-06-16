@@ -5,7 +5,7 @@ import subprocess
 import set_id
 from kivy.clock import Clock
 from time import sleep
-
+import random
 my_id = set_id.id_setter()
 print(my_id.my_movie)
 
@@ -293,7 +293,7 @@ my_video = OmxVideoPlayer("0,0,800,480", "0,0,720,480", my_id.my_movie)
 
 
 def derrick_osc(message, *args):
-
+    sleep(random.uniform(1,3))
     print('got message', message[2])
     if int(message[2]) == 1:
         print ('id 1 touched')
