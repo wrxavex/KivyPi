@@ -38,7 +38,7 @@ class DerrickWidget(Widget):
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.200', port=serviceport)
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.160', port=serviceport)
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.193', port=serviceport)
-                Clock.schedule_once(osc_all_play_yourself, 12)
+
 
 
 def stopFS():
@@ -217,6 +217,8 @@ def derrick_osc(message, *args):
     if int(message[2]) != int(my_id.id_to_set):
         print('random delay')
         sleep(random.uniform(0,3))
+    else:
+        Clock.schedule_once(osc_all_play_yourself, 12)
     print('got message', message[2])
 
     if int(message[2]) == 1:
