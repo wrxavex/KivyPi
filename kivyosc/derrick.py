@@ -295,16 +295,28 @@ def derrick_osc(message, *args):
         playone(f3)
         print ('play f3')
     if int(message[2]) == 4:
+        stopAll()
+        playone(f4)
         print ('id 4 touched')
     if int(message[2]) == 5:
+        stopAll()
+        playone(f5)
         print ('id 5 touched')
     if int(message[2]) == 6:
+        stopAll()
+        playone(f6)
         print ('id 6 touched')
     if int(message[2]) == 7:
+        stopAll()
+        playone(f7)
         print ('id 7 touched')
     if int(message[2]) == 8:
+        stopAll()
+        playone(f8)
         print ('id 8 touched')
     if int(message[2]) == 9:
+        stopAll()
+        playone(f9)
         print ('id 9 touched')
 
 
@@ -321,7 +333,6 @@ if __name__ == '__main__':
     print (my_id.id_to_set, 'id_to_set')
     print (croparea_setter(my_id.id_to_set))
 
-    # playone(my_video)
-    playone(f1)
+    playone(my_video)
 
     MyPaintApp().run()
