@@ -191,6 +191,7 @@ def stopVideo(videoins):
 
 
 def croparea_setter(id):
+    id = int(id)
     if id == 1:
         crop_area = "0,0,240,160"
         return croparea
@@ -255,7 +256,7 @@ v3 = OmxVideoPlayer("0,240,400,480", croparea_setter(my_id.id_to_set), "/home/pi
 v4 = OmxVideoPlayer("400,240,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/4.mp4")
 
 
-f1 = OmxVideoPlayer("0,0,800,480", croparea_setter(int(my_id.id_to_set)), "/home/pi/newTaipei/1.mp4")
+f1 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/1.mp4")
 f2 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/2.mp4")
 f3 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/3.mp4")
 f4 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/4.mp4")
@@ -318,8 +319,7 @@ if __name__ == '__main__':
 
     Clock.schedule_interval(lambda *x: osc.readQueue(oscid), 0)
     print (my_id.id_to_set, 'id_to_set')
-    id = int(my_id.id_to_set)
-    print (croparea_setter(id))
+    print (croparea_setter(my_id.id_to_set))
 
     # playone(my_video)
     playone(f1)
