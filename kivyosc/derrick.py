@@ -26,6 +26,7 @@ class MyPaintWidget(Widget):
             osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.200', port=serviceport)
             osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.160', port=serviceport)
             osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.193', port=serviceport)
+            Clock.schedule_once(osc_all_play_yourself(), 30)
 
             # if v1fs.is_available == 1:
             #     stopVideo(v1fs)
@@ -102,6 +103,18 @@ class MyPaintWidget(Widget):
             #     else:
             #         v4.is_available = 1
             #         v4.videoPlay()
+def osc_all_play_yourself():
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.189', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.190', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.191', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.192', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.198', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.199', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.200', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.160', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.193', port=serviceport)
+
+
 
 
 def stopFS():
