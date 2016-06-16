@@ -35,6 +35,7 @@ class Controller(FloatLayout):
         osc.sendMsg('/print/pd', dataArray=['sen2d', my_info.count], ipAddr='192.168.1.160', port=serviceport)
         osc.sendMsg('/print/pd', dataArray=['sen2d', my_info.count], ipAddr='192.168.1.194', port=serviceport)
         osc.sendMsg('/print/pd', dataArray=['sen2d', my_info.count], ipAddr='192.168.1.177', port=serviceport)
+        osc.sendMsg('/print/pd', dataArray=['sen2d', my_info.count], ipAddr='192.168.1.179', port=serviceport)
         osc.sendMsg('/print/pd', dataArray=['sen2d', my_info.count], ipAddr='192.168.1.198', port=serviceport)
 
         print('osc send')
