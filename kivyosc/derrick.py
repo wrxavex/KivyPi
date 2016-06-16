@@ -12,6 +12,19 @@ print(my_id.my_movie)
 serviceport = 8999
 activityport = 9999
 
+
+def osc_all_play_yourself():
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.189', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.190', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.191', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.192', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.198', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.199', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.200', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.160', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.193', port=serviceport)
+
+
 class MyPaintWidget(Widget):
     def on_touch_down(self, touch):
         with self.canvas:
@@ -26,7 +39,7 @@ class MyPaintWidget(Widget):
             osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.200', port=serviceport)
             osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.160', port=serviceport)
             osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.193', port=serviceport)
-            Clock.schedule_once(osc_all_play_yourself(), 30)
+            Clock.schedule_once(osc_all_play_yourself, 30)
 
             # if v1fs.is_available == 1:
             #     stopVideo(v1fs)
@@ -103,17 +116,6 @@ class MyPaintWidget(Widget):
             #     else:
             #         v4.is_available = 1
             #         v4.videoPlay()
-def osc_all_play_yourself():
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.189', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.190', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.191', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.192', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.198', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.199', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.200', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.160', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.193', port=serviceport)
-
 
 
 
