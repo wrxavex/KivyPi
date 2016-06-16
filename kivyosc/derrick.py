@@ -217,7 +217,7 @@ def derrick_osc(message, *args):
     print(my_id.locked, 'my id locked status')
     if int(message[2]) != int(my_id.id_to_set):
         print('random delay')
-        sleep(random.uniform(0,3))
+
     else:
         if my_id.locked == 0:
             Clock.schedule_once(osc_all_play_yourself, 12)
@@ -226,52 +226,62 @@ def derrick_osc(message, *args):
 
     if int(message[2]) == 1:
         print ('id 1 touched')
+        sleep(random.uniform(0,3))
         stopAll()
         playone(f1)
         my_id.locked = 1
         print('play f1')
     if int(message[2]) == 2:
         print ('id 2 touched')
+        sleep(random.uniform(0,3))
         stopAll()
         playone(f2)
         my_id.locked = 1
         print('play f2')
     if int(message[2]) == 3:
         print ('id 3 touched')
+        sleep(random.uniform(0,3))
         stopAll()
         playone(f3)
         my_id.locked = 1
         print ('play f3')
     if int(message[2]) == 4:
+        sleep(random.uniform(0,3))
         stopAll()
         playone(f4)
         my_id.locked = 1
         print ('id 4 touched')
     if int(message[2]) == 5:
+        sleep(random.uniform(0,3))
         stopAll()
         playone(f5)
         print ('id 5 touched')
     if int(message[2]) == 6:
+        sleep(random.uniform(0,3))
         stopAll()
         playone(f6)
         my_id.locked = 1
         print ('id 6 touched')
     if int(message[2]) == 7:
+        sleep(random.uniform(0,3))
         stopAll()
         playone(f7)
         my_id.locked = 1
         print ('id 7 touched')
     if int(message[2]) == 8:
+        sleep(random.uniform(0,3))
         stopAll()
         playone(f8)
         my_id.locked = 1
         print ('id 8 touched')
     if int(message[2]) == 9:
+        sleep(random.uniform(0,3))
         stopAll()
         playone(f9)
         my_id.locked = 1
         print ('id 9 touched')
     if int(message[2]) == 0:
+        sleep(random.uniform(0,3))
         stopAll()
         playone(my_video)
         my_id.locked = 0
