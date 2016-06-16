@@ -1,5 +1,6 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
+from kivy.lib import osc
 import subprocess
 import set_id
 
