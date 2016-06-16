@@ -226,7 +226,6 @@ def derrick_osc(message, *args):
 
     if int(message[2]) == 1:
         print ('id 1 touched')
-
         stopAll()
         sleep(random.uniform(0,3))
         playone(f1)
@@ -270,8 +269,8 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         print ('id 7 touched')
     if int(message[2]) == 8:
-        sleep(random.uniform(0,3))
         stopAll()
+        sleep(random.uniform(0,3))
         playone(f8)
         my_id.locked = 1
         print ('id 8 touched')
