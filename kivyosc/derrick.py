@@ -133,6 +133,12 @@ def playAll():
         v4.videoPlay()
 
 
+def playone(omxvideo):
+    if omxvideo.is_available == 0:
+        omxvideo.is_available = 1
+        omxvideo.videoPlay()
+
+
 def stopVideo(videoins):
     if videoins.is_available == 1:
         videoins.is_available = 0
@@ -176,8 +182,10 @@ v2fs = omxVideoPlayer("0,0,800,480", "/home/pi/newTaipei/2.mp4")
 v3fs = omxVideoPlayer("0,0,800,480", "/home/pi/newTaipei/3.mp4")
 v4fs = omxVideoPlayer("0,0,800,480", "/home/pi/newTaipei/4.mp4")
 
+my_video = omxVideoPlayer("0,0,800,480", my_id.my_movie)
+
 if __name__ == '__main__':
 
-    playAll()
+    playone(my_video)
 
     MyPaintApp().run()
