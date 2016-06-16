@@ -14,15 +14,15 @@ activityport = 9999
 
 
 def osc_all_play_yourself(dt):
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.189', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.190', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.191', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.192', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.198', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.199', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.200', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.160', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.193', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.189', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.190', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.191', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.192', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.198', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.199', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.200', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.160', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.193', port=serviceport)
 
 
 class MyPaintWidget(Widget):
@@ -335,7 +335,7 @@ def derrick_osc(message, *args):
         stopAll()
         playone(f9)
         print ('id 9 touched')
-    if message[2] == 'ReturnYourSelf':
+    if int(message[2]) == 0:
         stopAll()
         playone(my_video)
         print ('Play My video')
