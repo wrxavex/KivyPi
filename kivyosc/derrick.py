@@ -218,7 +218,8 @@ def derrick_osc(message, *args):
         print('random delay')
         sleep(random.uniform(0,3))
     else:
-        Clock.schedule_once(osc_all_play_yourself, 12)
+        if my_id.locked == 0:
+            Clock.schedule_once(osc_all_play_yourself, 12)
     print('got message', message[2])
 
     if int(message[2]) == 1:
