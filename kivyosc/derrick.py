@@ -1,16 +1,11 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.graphics import Color, Ellipse
 import subprocess
-import thread
-import psutil
+import set_id
 
 
-def kill(proc_pid):
-    procs = psutil.Process(proc_pid)
-    print (p.name())
-    print (p.status())
-
+myid = set_id.id_setter()
+print(myid.id_to_set)
 
 class MyPaintWidget(Widget):
     def on_touch_down(self, touch):
@@ -183,10 +178,6 @@ v4fs = omxVideoPlayer("0,0,800,480", "/home/pi/newTaipei/4.mp4")
 
 if __name__ == '__main__':
 
-    # thread.start_new_thread(v1.videoPlay, ())
-    # thread.start_new_thread(v2.videoPlay, ())
-    # thread.start_new_thread(v3.videoPlay, ())
-    # thread.start_new_thread(v4.videoPlay, ())
     playAll()
 
     MyPaintApp().run()
