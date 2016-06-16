@@ -318,7 +318,8 @@ if __name__ == '__main__':
 
     Clock.schedule_interval(lambda *x: osc.readQueue(oscid), 0)
     print (my_id.id_to_set, 'id_to_set')
-    print (croparea_setter(my_id.id_to_set).strip())
+    id = int(my_id.id_to_set)
+    print (croparea_setter(id))
 
     # playone(my_video)
     playone(f1)
