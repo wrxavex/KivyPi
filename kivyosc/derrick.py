@@ -238,23 +238,23 @@ def derrick_osc(message, *args):
 
     print('got message')
 
-    if int(message[3]) == 1:
+    if int(message[2]) == 1:
         print ('id 1 touched')
-    if int(message[3]) == 2:
+    if int(message[2]) == 2:
         print ('id 2 touched')
-    if int(message[3]) == 3:
+    if int(message[2]) == 3:
         print ('id 3 touched')
-    if int(message[3]) == 4:
+    if int(message[2]) == 4:
         print ('id 4 touched')
-    if int(message[3]) == 5:
+    if int(message[2]) == 5:
         print ('id 5 touched')
-    if int(message[3]) == 6:
+    if int(message[2]) == 6:
         print ('id 6 touched')
-    if int(message[3]) == 7:
+    if int(message[2]) == 7:
         print ('id 7 touched')
-    if int(message[3]) == 8:
+    if int(message[2]) == 8:
         print ('id 8 touched')
-    if int(message[3]) == 9:
+    if int(message[2]) == 9:
         print ('id 9 touched')
 
 
