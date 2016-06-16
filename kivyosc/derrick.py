@@ -214,6 +214,7 @@ my_video = OmxVideoPlayer("0,0,800,480", "0,0,720,480", my_id.my_movie)
 
 
 def derrick_osc(message, *args):
+    print(my_id.locked, 'my id locked status')
     if int(message[2]) != int(my_id.id_to_set):
         print('random delay')
         sleep(random.uniform(0,3))
