@@ -228,62 +228,62 @@ def derrick_osc(message, *args):
         print ('id 1 touched')
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0,3))
+        sleep(random.uniform(0,1))
         playone(f1)
         print('play f1')
     if int(message[2]) == 2:
         print ('id 2 touched')
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0,3))
+        sleep(random.uniform(0,1))
         playone(f2)
         print('play f2')
     if int(message[2]) == 3:
         print ('id 3 touched')
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0,3))
+        sleep(random.uniform(0,1))
         playone(f3)
         print ('play f3')
     if int(message[2]) == 4:
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0,3))
+        sleep(random.uniform(0,1))
         playone(f4)
         print ('id 4 touched')
     if int(message[2]) == 5:
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0,3))
+        sleep(random.uniform(0,1))
         playone(f5)
         print ('id 5 touched')
     if int(message[2]) == 6:
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0,3))
+        sleep(random.uniform(0,1))
         playone(f6)
         print ('id 6 touched')
     if int(message[2]) == 7:
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0,3))
+        sleep(random.uniform(0,1))
         playone(f7)
         print ('id 7 touched')
     if int(message[2]) == 8:
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0,3))
+        sleep(random.uniform(0,1))
         playone(f8)
         print ('id 8 touched')
     if int(message[2]) == 9:
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0,3))
+        sleep(random.uniform(0,1))
         playone(f9)
         print ('id 9 touched')
     if int(message[2]) == 0:
         stopAll()
-        sleep(random.uniform(0,3))
+        sleep(random.uniform(0,1))
         playone(my_video)
         my_id.locked = 0
         print ('Play My video')
