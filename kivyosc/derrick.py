@@ -17,13 +17,13 @@ class MyPaintWidget(Widget):
         with self.canvas:
 
             # print (my_id.my_movie+" touched")
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.189', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.190', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.191', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.192', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.198', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.199', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.200', port=serviceport)
+            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.189', port=serviceport)
+            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.190', port=serviceport)
+            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.191', port=serviceport)
+            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.192', port=serviceport)
+            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.198', port=serviceport)
+            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.199', port=serviceport)
+            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.200', port=serviceport)
 
             # if v1fs.is_available == 1:
             #     stopVideo(v1fs)
@@ -159,6 +159,27 @@ def stopVideo(videoins):
         videoins.proc.stdin.write('q')
 
 
+def croparea_setter(id):
+    if id == 1:
+        return "0,0,240,160"
+    if id == 2:
+        return "240,0,480,160"
+    if id == 3:
+        return "480,0,720,160"
+    if id == 4:
+        return "0,160,240,320"
+    if id == 5:
+        return "240,160,480,320"
+    if id == 6:
+        return "480,160,720,320"
+    if id == 7:
+        return "0,320,240,480"
+    if id == 8:
+        return "240,320,480,480"
+    if id ==9:
+        return "480,320,720,480"
+
+
 class MyPaintApp(App):
     def build(self):
         return MyPaintWidget()
@@ -167,13 +188,13 @@ class MyPaintApp(App):
 class OmxVideoPlayer:
     VideoCount = 0
 
-    def __init__(self, pos, name):
+    def __init__(self, pos, crop, name):
         self.pos = pos
         self.name = name
         self.is_playing = 0
         self.is_available = 0
         self.proc = 0
-        self.crop = "0,0,720,480"
+        self.crop = crop
         OmxVideoPlayer.VideoCount += 1
 
     def videoPlay(self):
@@ -188,16 +209,29 @@ class OmxVideoPlayer:
             self.proc.stdin.write('q')
 
 
-v1 = OmxVideoPlayer("0,0,400,240", "/home/pi/newTaipei/1.mp4")
-v2 = OmxVideoPlayer("400,0,800,240", "/home/pi/newTaipei/2.mp4")
-v3 = OmxVideoPlayer("0,240,400,480", "/home/pi/newTaipei/3.mp4")
-v4 = OmxVideoPlayer("400,240,800,480", "/home/pi/newTaipei/4.mp4")
-v1fs = OmxVideoPlayer("0,0,800,480", "/home/pi/newTaipei/1.mp4")
-v2fs = OmxVideoPlayer("0,0,800,480", "/home/pi/newTaipei/2.mp4")
-v3fs = OmxVideoPlayer("0,0,800,480", "/home/pi/newTaipei/3.mp4")
-v4fs = OmxVideoPlayer("0,0,800,480", "/home/pi/newTaipei/4.mp4")
+v1 = OmxVideoPlayer("0,0,400,240", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/1.mp4")
+v2 = OmxVideoPlayer("400,0,800,240", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/2.mp4")
+v3 = OmxVideoPlayer("0,240,400,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/3.mp4")
+v4 = OmxVideoPlayer("400,240,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/4.mp4")
 
-my_video = OmxVideoPlayer("0,0,800,480", my_id.my_movie)
+
+f1 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/1.mp4")
+f2 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/2.mp4")
+f3 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/3.mp4")
+f4 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/4.mp4")
+f5 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/5.mp4")
+f6 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/6.mp4")
+f7 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/7.mp4")
+f8 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/8.mp4")
+f9 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/9.mp4")
+
+
+v1fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/1.mp4")
+v2fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/2.mp4")
+v3fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/3.mp4")
+v4fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/4.mp4")
+
+my_video = OmxVideoPlayer("0,0,800,480", "0,0,720,480", my_id.my_movie)
 
 
 def derrick_osc(message, *args):
