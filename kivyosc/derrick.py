@@ -211,6 +211,14 @@ if __name__ == '__main__':
     oscid = osc.listen(ipAddr='0.0.0.0', port=serviceport)
     osc.bind(oscid, derrick_osc, '/derrick/osc')
 
+    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.189', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.190', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.191', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.192', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.198', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.199', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.200', port=serviceport)
+
     playone(my_video)
 
     MyPaintApp().run()
