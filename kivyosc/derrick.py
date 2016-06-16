@@ -25,98 +25,20 @@ def osc_all_play_yourself(dt):
     osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.193', port=serviceport)
 
 
-class MyPaintWidget(Widget):
+class DerrickWidget(Widget):
     def on_touch_down(self, touch):
         with self.canvas:
-
-            # print (my_id.my_movie+" touched")
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.189', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.190', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.191', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.192', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.198', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.199', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.200', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.160', port=serviceport)
-            osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.193', port=serviceport)
-            Clock.schedule_once(osc_all_play_yourself, 12)
-
-            # if v1fs.is_available == 1:
-            #     stopVideo(v1fs)
-            #     playAll()
-            #     return
-            # if v2fs.is_available == 1:
-            #     stopVideo(v2fs)
-            #     playAll()
-            #     return
-            # if v3fs.is_available == 1:
-            #     stopVideo(v3fs)
-            #     playAll()
-            #     return
-            # if v4fs.is_available == 1:
-            #     stopVideo(v4fs)
-            #     playAll()
-            #     return
-            # 
-            # if 0 < touch.x < 200 and 240 < touch.y < 480:
-            #     if v1.is_available == 0:
-            #         v1.is_available = 1
-            #         v1.videoPlay()
-            #         return
-            #     stopVideo(v1)
-            # 
-            # if 200 < touch.x < 400 and 240 < touch.y < 480:
-            #     if v1fs.is_available == 0:
-            #         v1fs.is_available = 1
-            #         stopAll()
-            #         v1fs.videoPlay()
-            #         return
-            # 
-            # if 400 < touch.x < 600 and 240 < touch.y < 480:
-            #     if v2fs.is_available == 0:
-            #         v2fs.is_available = 1
-            #         stopAll()
-            #         v2fs.videoPlay()
-            #         return
-            # 
-            # if 600 < touch.x < 800 and 240 < touch.y < 480:
-            #     if v2.is_available == 1:
-            #         v2.is_available = 0
-            #         v2.proc.stdin.write('q')
-            #     else:
-            #         v2.is_available = 1
-            #         v2.videoPlay()
-            # 
-            # if 0 < touch.x < 200 and 0 < touch.y < 240:
-            #     if v3.is_available == 1:
-            #         v3.is_available = 0
-            #         v3.proc.stdin.write('q')
-            #     else:
-            #         v3.is_available = 1
-            #         v3.videoPlay()
-            # 
-            # if 200 < touch.x < 400 and 0 < touch.y < 240:
-            #     if v3fs.is_available == 0:
-            #         v3fs.is_available = 1
-            #         stopAll()
-            #         v3fs.videoPlay()
-            #         return
-            # 
-            # if 400 < touch.x < 600 and 0 < touch.y < 240:
-            #     if v4fs.is_available == 0:
-            #         v4fs.is_available = 1
-            #         stopAll()
-            #         v4fs.videoPlay()
-            #         return
-            # 
-            # if 600 < touch.x < 800 and 0 < touch.y < 240:
-            #     if v4.is_available == 1:
-            #         v4.is_available = 0
-            #         v4.proc.stdin.write('q')
-            #     else:
-            #         v4.is_available = 1
-            #         v4.videoPlay()
-
+            if my_id.locked == 0:
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.189', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.190', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.191', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.192', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.198', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.199', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.200', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.160', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.193', port=serviceport)
+                Clock.schedule_once(osc_all_play_yourself, 12)
 
 
 def stopFS():
@@ -179,7 +101,6 @@ def stopAll():
         my_video.proc.stdin.write('q')
 
 
-
 def playAll():
     if v1.is_available == 0:
         v1.is_available = 1
@@ -238,9 +159,9 @@ def croparea_setter(id):
         return crop_area
 
 
-class MyPaintApp(App):
+class DerrickApp(App):
     def build(self):
-        return MyPaintWidget()
+        return DerrickWidget()
 
 
 class OmxVideoPlayer:
@@ -297,24 +218,29 @@ def derrick_osc(message, *args):
         print('random delay')
         sleep(random.uniform(0,3))
     print('got message', message[2])
+
     if int(message[2]) == 1:
         print ('id 1 touched')
         stopAll()
         playone(f1)
+        my_id.locked = 1
         print('play f1')
     if int(message[2]) == 2:
         print ('id 2 touched')
         stopAll()
         playone(f2)
+        my_id.locked = 1
         print('play f2')
     if int(message[2]) == 3:
         print ('id 3 touched')
         stopAll()
         playone(f3)
+        my_id.locked = 1
         print ('play f3')
     if int(message[2]) == 4:
         stopAll()
         playone(f4)
+        my_id.locked = 1
         print ('id 4 touched')
     if int(message[2]) == 5:
         stopAll()
@@ -323,22 +249,27 @@ def derrick_osc(message, *args):
     if int(message[2]) == 6:
         stopAll()
         playone(f6)
+        my_id.locked = 1
         print ('id 6 touched')
     if int(message[2]) == 7:
         stopAll()
         playone(f7)
+        my_id.locked = 1
         print ('id 7 touched')
     if int(message[2]) == 8:
         stopAll()
         playone(f8)
+        my_id.locked = 1
         print ('id 8 touched')
     if int(message[2]) == 9:
         stopAll()
         playone(f9)
+        my_id.locked = 1
         print ('id 9 touched')
     if int(message[2]) == 0:
         stopAll()
         playone(my_video)
+        my_id.locked = 0
         print ('Play My video')
 
 
@@ -354,4 +285,4 @@ if __name__ == '__main__':
 
     playone(my_video)
 
-    MyPaintApp().run()
+    DerrickApp().run()
