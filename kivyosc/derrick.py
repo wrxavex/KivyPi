@@ -198,7 +198,8 @@ my_video = OmxVideoPlayer("0,0,800,480", my_id.my_movie)
 
 
 def derrick_osc(message, *args):
-    print("got a message! %s" % message)
+
+    print('got message')
 
     # answer_message()
     print(str(message))
