@@ -14,7 +14,7 @@ class MyPaintWidget(Widget):
     def on_touch_down(self, touch):
         with self.canvas:
 
-            print (my_id.my_movie+" touched")
+            # print (my_id.my_movie+" touched")
             osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.189', port=serviceport)
             osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.190', port=serviceport)
             osc.sendMsg('/derrick/osc', dataArray=[my_id.my_movie], ipAddr='192.168.1.191', port=serviceport)
