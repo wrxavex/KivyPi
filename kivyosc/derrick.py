@@ -226,22 +226,23 @@ def derrick_osc(message, *args):
 
     if int(message[2]) == 1:
         print ('id 1 touched')
-        sleep(random.uniform(0,3))
+
         stopAll()
+        sleep(random.uniform(0,3))
         playone(f1)
         my_id.locked = 1
         print('play f1')
     if int(message[2]) == 2:
         print ('id 2 touched')
-        sleep(random.uniform(0,3))
         stopAll()
+        sleep(random.uniform(0,3))
         playone(f2)
         my_id.locked = 1
         print('play f2')
     if int(message[2]) == 3:
         print ('id 3 touched')
-        sleep(random.uniform(0,3))
         stopAll()
+        sleep(random.uniform(0,3))
         playone(f3)
         my_id.locked = 1
         print ('play f3')
@@ -252,19 +253,19 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         print ('id 4 touched')
     if int(message[2]) == 5:
-        sleep(random.uniform(0,3))
         stopAll()
+        sleep(random.uniform(0,3))
         playone(f5)
         print ('id 5 touched')
     if int(message[2]) == 6:
-        sleep(random.uniform(0,3))
         stopAll()
+        sleep(random.uniform(0,3))
         playone(f6)
         my_id.locked = 1
         print ('id 6 touched')
     if int(message[2]) == 7:
-        sleep(random.uniform(0,3))
         stopAll()
+        sleep(random.uniform(0,3))
         playone(f7)
         my_id.locked = 1
         print ('id 7 touched')
@@ -275,14 +276,14 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         print ('id 8 touched')
     if int(message[2]) == 9:
-        sleep(random.uniform(0,3))
         stopAll()
+        sleep(random.uniform(0,3))
         playone(f9)
         my_id.locked = 1
         print ('id 9 touched')
     if int(message[2]) == 0:
-        sleep(random.uniform(0,3))
         stopAll()
+        sleep(random.uniform(0,3))
         playone(my_video)
         my_id.locked = 0
         print ('Play My video')
