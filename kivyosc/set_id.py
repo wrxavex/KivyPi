@@ -5,6 +5,7 @@ class id_setter:
         ip_config_file = open('/home/pi/KivyPi/config/ip_conf_sample', 'r')
         self.id_to_set = id_setting_file.read().strip()
         self.ip_config_= ip_config_file.read()
+        self.my_movie = "/home/pi/newTaipei/"+self.id_to_set+".mp4"
 
     def set_to_new_ip(self):
         if 1 <= self.id_to_set <= 9:

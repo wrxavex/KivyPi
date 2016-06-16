@@ -3,9 +3,9 @@ from kivy.uix.widget import Widget
 import subprocess
 import set_id
 
+my_id = set_id.id_setter()
+print(my_id.my_movie)
 
-myid = set_id.id_setter()
-print(myid.id_to_set)
 
 class MyPaintWidget(Widget):
     def on_touch_down(self, touch):
@@ -156,7 +156,7 @@ class omxVideoPlayer:
         omxVideoPlayer.VideoCount += 1
 
     def videoPlay(self):
-        self.proc = subprocess.Popen(['omxplayer', '--loop', '--win', self.pos, self.name], stdin=subprocess.PIPE)
+        self.proc = subprocess.Popen(['omxplayer','--no-osd' '--loop', '--win', self.pos, self.name], stdin=subprocess.PIPE)
 
     def videoCount(self):
         print (omxVideoPlayer.VideoCount)
