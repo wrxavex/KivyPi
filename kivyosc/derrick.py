@@ -13,7 +13,7 @@ serviceport = 8999
 activityport = 9999
 
 
-def osc_all_play_yourself():
+def osc_all_play_yourself(dt):
     osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.189', port=serviceport)
     osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.190', port=serviceport)
     osc.sendMsg('/derrick/osc', dataArray=['ReturnYourSelf'], ipAddr='192.168.1.191', port=serviceport)
@@ -335,6 +335,10 @@ def derrick_osc(message, *args):
         stopAll()
         playone(f9)
         print ('id 9 touched')
+    if message[2]) == 'ReturnYourSelf':
+        stopAll()
+        playone(my_video)
+        print ('Play My video')
 
 
 
