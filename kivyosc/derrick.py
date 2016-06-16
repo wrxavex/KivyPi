@@ -247,8 +247,8 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         print ('play f3')
     if int(message[2]) == 4:
-        sleep(random.uniform(0,3))
         stopAll()
+        sleep(random.uniform(0,3))
         playone(f4)
         my_id.locked = 1
         print ('id 4 touched')
