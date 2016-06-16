@@ -335,13 +335,10 @@ def derrick_osc(message, *args):
         stopAll()
         playone(f9)
         print ('id 9 touched')
-    if message[2]) == 'ReturnYourSelf':
+    if message[2] == 'ReturnYourSelf':
         stopAll()
         playone(my_video)
         print ('Play My video')
-
-
-
 
 
 if __name__ == '__main__':
