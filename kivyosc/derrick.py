@@ -39,7 +39,7 @@ class MyPaintWidget(Widget):
             osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.200', port=serviceport)
             osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.160', port=serviceport)
             osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.193', port=serviceport)
-            Clock.schedule_once(osc_all_play_yourself, 30)
+            Clock.schedule_once(osc_all_play_yourself, 12)
 
             # if v1fs.is_available == 1:
             #     stopVideo(v1fs)
