@@ -21,8 +21,8 @@ def osc_all_play_yourself(dt):
     osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.198', port=serviceport)
     osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.199', port=serviceport)
     osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.200', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.160', port=serviceport)
-    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.193', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.188', port=serviceport)
+    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.159', port=serviceport)
 
 
 class DerrickWidget(Widget):
@@ -36,8 +36,8 @@ class DerrickWidget(Widget):
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.198', port=serviceport)
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.199', port=serviceport)
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.200', port=serviceport)
-                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.160', port=serviceport)
-                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.193', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.188', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.159', port=serviceport)
 
 
 
