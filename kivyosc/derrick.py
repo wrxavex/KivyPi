@@ -216,7 +216,6 @@ def stopall():
         print ('a3 stop')
 
     if sys.getsizeof(my_video.proc) > 12:
-        my_video.proc = 0
         my_video.proc.stdin.write('q')
         print ('my video stop')
 
