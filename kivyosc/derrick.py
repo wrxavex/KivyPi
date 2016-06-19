@@ -148,12 +148,12 @@ def play_random_audio(seed, dt):
             a1.is_available = 1
             print ('playing audio 1')
             a1.audio_play()
-    if random_number == 2:
+    elif random_number == 2:
         if a2.is_available == 0:
             a2.is_available = 1
             print ('playing audio 2')
             a2.audio_play()
-    if random_number == 3:
+    elif random_number == 3:
         if a3.is_available == 0:
             a3.is_available = 1
             print ('playing audio 3')
