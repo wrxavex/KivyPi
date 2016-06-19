@@ -293,7 +293,7 @@ my_video = OmxVideoPlayer("0,0,800,480", "0,0,720,480", my_id.my_movie)
 
 
 def derrick_osc(message, *args):
-    print(my_id.locked, 'my id locked status')
+    print(my_id.locked, 'my id locked status 1 is locked')
     if int(message[2]) != int(my_id.id_to_set):
         print('random delay')
 
@@ -309,24 +309,27 @@ def derrick_osc(message, *args):
         stopall()
         sleep(random.uniform(0,1))
         thread.start_new_thread(playone, (f1, ))
+        print ('play f1')
         thread.start_new_thread(play_random_audio, ("none", "null"))
-        print('play f1')
+        print ('f1 with audio')
     if int(message[2]) == 2:
         print ('id 2 touched')
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
         thread.start_new_thread(playone, (f2, ))
-        thread.start_new_thread(play_random_audio, ("none", "null"))
         print('play f2')
+        thread.start_new_thread(play_random_audio, ("none", "null"))
+        print('f2 with audio')
     if int(message[2]) == 3:
         print ('id 3 touched')
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
         thread.start_new_thread(playone, (f3, ))
-        thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('play f3')
+        thread.start_new_thread(play_random_audio, ("none", "null"))
+        print ('f3 with audio')
     if int(message[2]) == 4:
         my_id.locked = 1
         stopall()
@@ -342,37 +345,42 @@ def derrick_osc(message, *args):
         stopall()
         sleep(random.uniform(0,1))
         thread.start_new_thread(playone, (f5, ))
+        print ('play f5')
         thread.start_new_thread(play_random_audio, ("none", "null"))
-        print ('id 5 touched')
+        print ('f5 with audio')
     if int(message[2]) == 6:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
         thread.start_new_thread(playone, (f6, ))
+        print ('play f5')
         thread.start_new_thread(play_random_audio, ("none", "null"))
-        print ('id 6 touched')
+        print ('f5 with auido')
     if int(message[2]) == 7:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
         thread.start_new_thread(playone, (f7, ))
+        print ('play f7')
         thread.start_new_thread(play_random_audio, ("none", "null"))
-        print ('id 7 touched')
+        print ('f7 with audio')
     if int(message[2]) == 8:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
         thread.start_new_thread(playone, (f8, ))
+        print ('play f8')
         thread.start_new_thread(play_random_audio, ("none", "null"))
-        print ('id 8 touched')
+        print ('f8 with audio')
     if int(message[2]) == 9:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
 
         thread.start_new_thread(playone, (f9, ))
+        print ('play f9')
         thread.start_new_thread(play_random_audio, ("none", "null"))
-        print ('id 9 touched')
+        print ('f9 with audio')
     if int(message[2]) == 0:
         stopall()
         sleep(random.uniform(0,1))
