@@ -88,8 +88,12 @@ def stopall():
     print ('f9 proc is %s \n' % f9.proc)
 
     print ('a1 proc is %s \n' % a1.proc)
+    print (type(a1.proc))
+
     print ('a2 proc is %s \n' % a2.proc)
+    print (type(a2.proc))
     print ('a3 proc is %s \n' % a3.proc)
+    print (type(a3.proc))
 
     print ('MY video proc is %s \n' % my_video.proc)
 
