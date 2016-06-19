@@ -140,7 +140,7 @@ def play_one_v2(omxvideo, dt):
         omxvideo.videoPlay()
 
 
-def playaudio(audio_file):
+def play_audio(audio_file, dt):
     if random.randint(1, 3) == 1:
         a1.audio_play()
     if random.randint(1, 3) == 2:
@@ -308,7 +308,7 @@ def derrick_osc(message, *args):
         print ('id 4 video play before')
         thread.start_new_thread(play_one_v2, (f4, ""))
         print ('id 4 after video')
-        playaudio()
+        thread.start_new_thread(play_audio, (dt, ))
 
     if int(message[2]) == 5:
         my_id.locked = 1
