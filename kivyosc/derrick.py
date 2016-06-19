@@ -61,21 +61,7 @@ def stopall():
 
     print ('stop all: \n')
 
-    print ('f1 status is %d \n' % f1.is_available)
-    print ('f2 status is %d \n' % f2.is_available)
-    print ('f3 status is %d \n' % f3.is_available)
-    print ('f4 status is %d \n' % f4.is_available)
-    print ('f5 status is %d \n' % f5.is_available)
-    print ('f6 status is %d \n' % f6.is_available)
-    print ('f7 status is %d \n' % f7.is_available)
-    print ('f8 status is %d \n' % f8.is_available)
-    print ('f9 status is %d \n' % f9.is_available)
 
-    print ('a1 status is %d \n' % a1.is_available)
-    print ('a2 status is %d \n' % a2.is_available)
-    print ('a3 status is %d \n' % a3.is_available)
-
-    print ('MY video status is %d \n' % my_video.is_available)
 
     if f1.is_available == 1:
         f1.is_available = 0
@@ -144,6 +130,22 @@ def stopall():
         my_video.is_available = 0
         my_video.proc.stdin.write('q')
         print ('my video stop')
+
+    print ('f1 status is %d \n' % f1.is_available)
+    print ('f2 status is %d \n' % f2.is_available)
+    print ('f3 status is %d \n' % f3.is_available)
+    print ('f4 status is %d \n' % f4.is_available)
+    print ('f5 status is %d \n' % f5.is_available)
+    print ('f6 status is %d \n' % f6.is_available)
+    print ('f7 status is %d \n' % f7.is_available)
+    print ('f8 status is %d \n' % f8.is_available)
+    print ('f9 status is %d \n' % f9.is_available)
+
+    print ('a1 status is %d \n' % a1.is_available)
+    print ('a2 status is %d \n' % a2.is_available)
+    print ('a3 status is %d \n' % a3.is_available)
+
+    print ('MY video status is %d \n' % my_video.is_available)
 
 
 def playAll():
