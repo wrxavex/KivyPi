@@ -62,22 +62,6 @@ def stopall():
 
     print ('stop all: \n')
 
-    print ('f1 status is %d \n' % f1.is_available)
-    print ('f2 status is %d \n' % f2.is_available)
-    print ('f3 status is %d \n' % f3.is_available)
-    print ('f4 status is %d \n' % f4.is_available)
-    print ('f5 status is %d \n' % f5.is_available)
-    print ('f6 status is %d \n' % f6.is_available)
-    print ('f7 status is %d \n' % f7.is_available)
-    print ('f8 status is %d \n' % f8.is_available)
-    print ('f9 status is %d \n' % f9.is_available)
-
-    print ('a1 status is %d \n' % a1.is_available)
-    print ('a2 status is %d \n' % a2.is_available)
-    print ('a3 status is %d \n' % a3.is_available)
-
-    print ('MY video status is %d \n' % my_video.is_available)
-
     print ('f1 proc is %s \n' % f1.proc)
     print ('f2 proc is %s \n' % f2.proc)
     print ('f3 proc is %s \n' % f3.proc)
@@ -89,24 +73,9 @@ def stopall():
     print ('f9 proc is %s \n' % f9.proc)
 
     print ('a1 proc is %s \n' % a1.proc)
-    print (type(a1.proc))
-    print (type(a1.proc) is object)
-    print (type(a1.proc) > 0)
-    print (type(a1.proc) is classmethod)
-    print(sys.getsizeof(a1.proc))
-
     print ('a2 proc is %s \n' % a2.proc)
-    print (type(a2.proc))
-    print (type(a2.proc) is object)
-    print (type(a2.proc) is classmethod)
     print ('a3 proc is %s \n' % a3.proc)
-    print(sys.getsizeof(a2.proc))
-    print (type(a3.proc))
-    print (type(a3.proc) is object)
-    print (type(a3.proc) is classmethod)
-    print(sys.getsizeof(a3.proc))
-    print ('MY video proc is %s \n' % my_video.proc)
-    print(sys.getsizeof(my_video.proc))
+    print ('my video proc is %s \n' % my_video.proc)
 
     #
     # if f1.is_available == 1:
@@ -219,21 +188,6 @@ def stopall():
         my_video.proc.stdin.write('q')
         print ('my video stop')
 
-    print ('f1 status is %d \n' % f1.is_available)
-    print ('f2 status is %d \n' % f2.is_available)
-    print ('f3 status is %d \n' % f3.is_available)
-    print ('f4 status is %d \n' % f4.is_available)
-    print ('f5 status is %d \n' % f5.is_available)
-    print ('f6 status is %d \n' % f6.is_available)
-    print ('f7 status is %d \n' % f7.is_available)
-    print ('f8 status is %d \n' % f8.is_available)
-    print ('f9 status is %d \n' % f9.is_available)
-
-    print ('a1 status is %d \n' % a1.is_available)
-    print ('a2 status is %d \n' % a2.is_available)
-    print ('a3 status is %d \n' % a3.is_available)
-
-    print ('MY video status is %d \n' % my_video.is_available)
 
 
 def playAll():
@@ -252,8 +206,11 @@ def playAll():
 
 
 def playone(omxvideo):
-    if omxvideo.is_available == 0:
-        omxvideo.is_available = 1
+    #    if omxvideo.is_available == 0:
+    #        omxvideo.is_available = 1
+    #        omxvideo.videoPlay()
+
+    if sys.getsizeof(omxvideo.proc) < 12:
         omxvideo.videoPlay()
 
 
@@ -266,23 +223,27 @@ def play_one_v2(omxvideo, dt):
 def play_random_audio(seed, dt):
     random_number = random.randint(1, 3)
     print ('random number is %d' % random_number)
-    if random_number == 1:
-        if a1.is_available == 0:
-            a1.is_available = 1
-            print ('playing audio 1')
-            a1.audio_play()
-    elif random_number == 2:
-        if a2.is_available == 0:
-            a2.is_available = 1
-            print ('playing audio 2')
-            a2.audio_play()
-    elif random_number == 3:
-        if a3.is_available == 0:
-            a3.is_available = 1
-            print ('playing audio 3')
-            a3.audio_play()
-    else:
-        print ('what is wrong')
+    # if random_number == 1:
+    #     if a1.is_available == 0:
+    #         a1.is_available = 1
+    #         print ('playing audio 1')
+    #         a1.audio_play()
+    # elif random_number == 2:
+    #     if a2.is_available == 0:
+    #         a2.is_available = 1
+    #         print ('playing audio 2')
+    #         a2.audio_play()
+    # elif random_number == 3:
+    #     if a3.is_available == 0:
+    #         a3.is_available = 1
+    #         print ('playing audio 3')
+    #         a3.audio_play()
+    # else:
+    #     print ('what is wrong')
+
+    if sys.getsizeof(my_video.proc) < 12:
+        a3.audio_play()
+
         
 
 def stopVideo(videoins):
