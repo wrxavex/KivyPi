@@ -341,35 +341,36 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        thread(playone, (f5, ))
+        thread.start_new_thread(playone, (f5, ))
         thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('id 5 touched')
     if int(message[2]) == 6:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        thread(playone, (f6, ))
+        thread.start_new_thread(playone, (f6, ))
         thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('id 6 touched')
     if int(message[2]) == 7:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        thread(playone, (f7, ))
+        thread.start_new_thread(playone, (f7, ))
         thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('id 7 touched')
     if int(message[2]) == 8:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        thread(playone, (f8, ))
+        thread.start_new_thread(playone, (f8, ))
         thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('id 8 touched')
     if int(message[2]) == 9:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        thread(playone, (f9, ))
+
+        thread.start_new_thread(playone, (f9, ))
         thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('id 9 touched')
     if int(message[2]) == 0:
