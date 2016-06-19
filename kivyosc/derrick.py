@@ -86,7 +86,7 @@ def stopall():
     print ('f7 proc is %s \n' % f7.proc)
     print ('f8 proc is %s \n' % f8.proc)
     print ('f9 proc is %s \n' % f9.proc)
-                        s
+
     print ('a1 proc is %s \n' % a1.proc)
     print ('a2 proc is %s \n' % a2.proc)
     print ('a3 proc is %s \n' % a3.proc)
