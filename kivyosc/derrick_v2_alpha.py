@@ -6,6 +6,8 @@ import set_id
 from kivy.clock import Clock
 from time import sleep
 import random
+import thread
+import sys
 
 my_id = set_id.id_setter()
 print(my_id.my_movie)
@@ -25,16 +27,6 @@ def osc_all_play_yourself(dt):
     osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.188', port=serviceport)
     osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.159', port=serviceport)
 
-    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.189', port=activityport)
-    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.190', port=activityport)
-    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.191', port=activityport)
-    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.192', port=activityport)
-    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.198', port=activityport)
-    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.199', port=activityport)
-    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.200', port=activityport)
-    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.188', port=activityport)
-    osc.sendMsg('/derrick/osc', dataArray=[0], ipAddr='192.168.1.159', port=activityport)
-
 
 class DerrickWidget(Widget):
     def on_touch_down(self, touch):
@@ -49,17 +41,6 @@ class DerrickWidget(Widget):
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.200', port=serviceport)
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.188', port=serviceport)
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.159', port=serviceport)
-
-                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.189', port=activityport)
-                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.190', port=activityport)
-                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.191', port=activityport)
-                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.192', port=activityport)
-                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.198', port=activityport)
-                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.199', port=activityport)
-                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.200', port=activityport)
-                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.188', port=activityport)
-                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.159', port=activityport)
-
 
 
 def stopFS():
@@ -77,49 +58,134 @@ def stopFS():
         playAll()
 
 
-def stopAll():
-    if f1.is_available == 1:
-        f1.is_available = 0
+def stopall():
+    print ('stop all: \n')
+
+    print ('f1 proc is %s \n' % f1.proc)
+    print ('f2 proc is %s \n' % f2.proc)
+    print ('f3 proc is %s \n' % f3.proc)
+    print ('f4 proc is %s \n' % f4.proc)
+    print ('f5 proc is %s \n' % f5.proc)
+    print ('f6 proc is %s \n' % f6.proc)
+    print ('f7 proc is %s \n' % f7.proc)
+    print ('f8 proc is %s \n' % f8.proc)
+    print ('f9 proc is %s \n' % f9.proc)
+
+    print ('a1 proc is %s \n' % a1.proc)
+    print ('a2 proc is %s \n' % a2.proc)
+    print ('a3 proc is %s \n' % a3.proc)
+    print ('my video proc is %s \n' % my_video.proc)
+
+    #
+    # if f1.is_available == 1:
+    #     f1.proc.stdin.write('q')
+    #     f1.is_available = 0
+    #     print ('f1 stop')
+    # if f2.is_available == 1:
+    #     f2.proc.stdin.write('q')
+    #     f2.is_available = 0
+    #     print ('f2 stop')
+    # if f3.is_available == 1:
+    #     f3.proc.stdin.write('q')
+    #     f3.is_available = 0
+    #     print ('f3 stop')
+    # if f4.is_available == 1:
+    #     f4.proc.stdin.write('q')
+    #     f4.is_available = 0
+    #     print ('f4 stop')
+    # if f5.is_available == 1:
+    #     f5.proc.stdin.write('q')
+    #     f5.is_available = 0
+    #     print ('f5 stop')
+    # if f6.is_available == 1:
+    #     f6.proc.stdin.write('q')
+    #     f6.is_available = 0
+    #     print ('f6 stop')
+    # if f7.is_available == 1:
+    #     f7.proc.stdin.write('q')
+    #     f7.is_available = 0
+    #     print ('f7 stop')
+    # if f8.is_available == 1:
+    #     f8.proc.stdin.write('q')
+    #     f8.is_available = 0
+    #     print ('f8 stop')
+    # if f9.is_available == 1:
+    #     f9.proc.stdin.write('q')
+    #     f9.is_available = 0
+    #     print ('f9 stop')
+    #
+    # if v1.is_available == 1:
+    #     v1.is_available = 0
+    #     v1.proc.stdin.write('q')
+    # if v2.is_available == 1:
+    #     v2.is_available = 0
+    #     v2.proc.stdin.write('q')
+    # if v3.is_available == 1:
+    #     v3.is_available = 0
+    #     v3.proc.stdin.write('q')
+    # if v4.is_available == 1:
+    #     v4.is_available = 0
+    #     v4.proc.stdin.write('q')
+    #
+    # if a1.is_available == 1:
+    #     a1.is_available = 0
+    #     a1.proc.stdin.write('q')
+    #     print ('a1 stop')
+    # if a2.is_available == 1:
+    #     a2.is_available = 0
+    #     a2.proc.stdin.write('q')
+    #     print ('a2 stop')
+    # if a3.is_available == 1:
+    #     a3.is_available = 0
+    #     a3.proc.stdin.write('q')
+    #     print ('a3 stop')
+    #
+    # if my_video.is_available == 1:
+    #     my_video.is_available = 0
+    #     my_video.proc.stdin.write('q')
+    #     print ('my video stop')
+
+    if sys.getsizeof(f1.proc) > 12:
         f1.proc.stdin.write('q')
-    if f2.is_available == 1:
-        f2.is_available = 0
+        print ('f1 stop')
+    if sys.getsizeof(f2.proc) > 12:
         f2.proc.stdin.write('q')
-    if f3.is_available == 1:
-        f3.is_available = 0
+        print ('f2 stop')
+    if sys.getsizeof(f3.proc) > 12:
         f3.proc.stdin.write('q')
-    if f4.is_available == 1:
-        f4.is_available = 0
+        print ('f3 stop')
+    if sys.getsizeof(f4.proc) > 12:
         f4.proc.stdin.write('q')
-    if f5.is_available == 1:
-        f5.is_available = 0
+        print ('f4 stop')
+    if sys.getsizeof(f5.proc) > 12:
         f5.proc.stdin.write('q')
-    if f6.is_available == 1:
-        f6.is_available = 0
+        print ('f5 stop')
+    if sys.getsizeof(f6.proc) > 12:
         f6.proc.stdin.write('q')
-    if f7.is_available == 1:
-        f7.is_available = 0
+        print ('f6 stop')
+    if sys.getsizeof(f7.proc) > 12:
         f7.proc.stdin.write('q')
-    if f8.is_available == 1:
-        f8.is_available = 0
+        print ('f7 stop')
+    if sys.getsizeof(f8.proc) > 12:
         f8.proc.stdin.write('q')
-    if f9.is_available == 1:
-        f9.is_available = 0
+        print ('f8 stop')
+    if sys.getsizeof(f9.proc) > 12:
         f9.proc.stdin.write('q')
-    if v1.is_available == 1:
-        v1.is_available = 0
-        v1.proc.stdin.write('q')
-    if v2.is_available == 1:
-        v2.is_available = 0
-        v2.proc.stdin.write('q')
-    if v3.is_available == 1:
-        v3.is_available = 0
-        v3.proc.stdin.write('q')
-    if v4.is_available == 1:
-        v4.is_available = 0
-        v4.proc.stdin.write('q')
-    if my_video.is_available == 1:
-        my_video.is_available = 0
+        print ('f9 stop')
+
+    if sys.getsizeof(a1.proc) > 12:
+        a1.proc.stdin.write('q')
+        print ('a1 stop')
+    if sys.getsizeof(a2.proc) > 12:
+        a2.proc.stdin.write('q')
+        print ('a2 stop')
+    if sys.getsizeof(a3.proc) > 12:
+        a3.proc.stdin.write('q')
+        print ('a3 stop')
+
+    if sys.getsizeof(my_video.proc) > 12:
         my_video.proc.stdin.write('q')
+        print ('my video stop')
 
 
 def playAll():
@@ -138,9 +204,40 @@ def playAll():
 
 
 def playone(omxvideo):
+    #    if omxvideo.is_available == 0:
+    #        omxvideo.is_available = 1
+    #        omxvideo.videoPlay()
+
+    omxvideo.videoPlay()
+
+
+def play_one_v2(omxvideo, dt):
     if omxvideo.is_available == 0:
         omxvideo.is_available = 1
         omxvideo.videoPlay()
+
+
+def play_random_audio(seed, dt):
+    random_number = random.randint(1, 3)
+    print ('random number is %d' % random_number)
+    if random_number == 1:
+        if a1.is_available == 0:
+            a1.is_available = 1
+            print ('playing audio 1')
+            a1.audio_play()
+    elif random_number == 2:
+        if a2.is_available == 0:
+            a2.is_available = 1
+            print ('playing audio 2')
+            a2.audio_play()
+    elif random_number == 3:
+        if a3.is_available == 0:
+            a3.is_available = 1
+            print ('playing audio 3')
+            a3.audio_play()
+    else:
+        print ('what is wrong')
+
 
 
 def stopVideo(videoins):
@@ -211,6 +308,30 @@ class OmxVideoPlayer:
             self.proc.stdin.write('q')
 
 
+class OmxAudioPlayer:
+    AudioCount = 0
+
+    def __init__(self, name):
+        self.name = name
+        self.is_playing = 0
+        self.is_available = 0
+        self.proc = 0
+        OmxAudioPlayer.AudioCount += 1
+
+    def audio_play(self):
+        self.proc = subprocess.Popen(['omxplayer', '-o', 'local', '--loop', '--no-osd', self.name],
+                                     stdin=subprocess.PIPE)
+
+    @staticmethod
+    def audio_count():
+        print (OmxVideoPlayer.AudioCount)
+
+    def kill_audio(self):
+        if self.is_playing == 1:
+            self.is_playing = 0
+            self.proc.stdin.write('q')
+
+
 v1 = OmxVideoPlayer("0,0,400,240", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/1.mp4")
 v2 = OmxVideoPlayer("400,0,800,240", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/2.mp4")
 v3 = OmxVideoPlayer("0,240,400,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/3.mp4")
@@ -226,6 +347,10 @@ f7 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/n
 f8 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/8.mp4")
 f9 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/9.mp4")
 
+a1 = OmxAudioPlayer("/home/pi/newTaipei/no1.wav")
+a2 = OmxAudioPlayer("/home/pi/newTaipei/no2.wav")
+a3 = OmxAudioPlayer("/home/pi/newTaipei/no3.wav")
+
 v1fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/1.mp4")
 v2fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/2.mp4")
 v3fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/3.mp4")
@@ -235,7 +360,6 @@ my_video = OmxVideoPlayer("0,0,800,480", "0,0,720,480", my_id.my_movie)
 
 
 def derrick_osc(message, *args):
-    print(my_id.locked, 'my id locked status')
     if int(message[2]) != int(my_id.id_to_set):
         print('random delay')
 
@@ -248,66 +372,97 @@ def derrick_osc(message, *args):
     if int(message[2]) == 1:
         print ('id 1 touched')
         my_id.locked = 1
-        stopAll()
+        stopall()
         sleep(random.uniform(0, 1))
-        playone(f1)
-        print('play f1')
+        thread.start_new_thread(playone, (f1,))
+        print ('play f1')
+        thread.start_new_thread(play_random_audio, ("none", "null"))
+        print ('f1 with audio')
     if int(message[2]) == 2:
         print ('id 2 touched')
         my_id.locked = 1
-        stopAll()
+        stopall()
         sleep(random.uniform(0, 1))
-        playone(f2)
+        thread.start_new_thread(playone, (f2,))
         print('play f2')
+        thread.start_new_thread(play_random_audio, ("none", "null"))
+        print('f2 with audio')
+
     if int(message[2]) == 3:
         print ('id 3 touched')
         my_id.locked = 1
-        stopAll()
+        stopall()
         sleep(random.uniform(0, 1))
-        playone(f3)
+        thread.start_new_thread(playone, (f3,))
         print ('play f3')
+        thread.start_new_thread(play_random_audio, ("none", "null"))
+        print ('f3 with audio')
+
     if int(message[2]) == 4:
         my_id.locked = 1
-        stopAll()
+        stopall()
         sleep(random.uniform(0, 1))
-        playone(f4)
-        print ('id 4 touched')
+        print ('id 4 video play before')
+        thread.start_new_thread(playone, (f4,))
+        print ('id 4 after video')
+        thread.start_new_thread(play_random_audio, ("none", "null"))
+        print ('id 4 audio play')
+
     if int(message[2]) == 5:
         my_id.locked = 1
-        stopAll()
+        stopall()
         sleep(random.uniform(0, 1))
-        playone(f5)
-        print ('id 5 touched')
+        thread.start_new_thread(playone, (f5,))
+        print ('play f5')
+        thread.start_new_thread(play_random_audio, ("none", "null"))
+        print ('f5 with audio')
+
     if int(message[2]) == 6:
         my_id.locked = 1
-        stopAll()
+        stopall()
         sleep(random.uniform(0, 1))
-        playone(f6)
-        print ('id 6 touched')
+        thread.start_new_thread(playone, (f6,))
+        print ('play f6')
+        thread.start_new_thread(play_random_audio, ("none", "null"))
+        print ('f6 with auido')
     if int(message[2]) == 7:
         my_id.locked = 1
-        stopAll()
+        stopall()
         sleep(random.uniform(0, 1))
-        playone(f7)
-        print ('id 7 touched')
+        thread.start_new_thread(playone, (f7,))
+        print ('play f7')
+        thread.start_new_thread(play_random_audio, ("none", "null"))
+        print ('f7 with audio')
+
     if int(message[2]) == 8:
         my_id.locked = 1
-        stopAll()
+        stopall()
         sleep(random.uniform(0, 1))
-        playone(f8)
-        print ('id 8 touched')
+        thread.start_new_thread(playone, (f8,))
+        print ('play f8')
+        thread.start_new_thread(play_random_audio, ("none", "null"))
+        print ('f8 with audio')
+
     if int(message[2]) == 9:
         my_id.locked = 1
-        stopAll()
+        stopall()
         sleep(random.uniform(0, 1))
-        playone(f9)
-        print ('id 9 touched')
+
+        thread.start_new_thread(playone, (f9,))
+        print ('play f9')
+        thread.start_new_thread(play_random_audio, ("none", "null"))
+        print ('f9 with audio')
+
     if int(message[2]) == 0:
-        stopAll()
+        stopall()
         sleep(random.uniform(0, 1))
-        playone(my_video)
+        thread.start_new_thread(playone, (my_video,))
+        print ('play 0 my_video')
+        print ('my_video status is %d \n' % my_video.is_available)
+        thread.start_new_thread(play_random_audio, ("none", "null"))
+        print ('Play random audio')
         my_id.locked = 0
-        print ('Play My video')
+        print ('unlock')
 
 
 if __name__ == '__main__':
