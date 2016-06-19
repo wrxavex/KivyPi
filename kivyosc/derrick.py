@@ -338,7 +338,7 @@ def derrick_osc(message, *args):
 
     else:
         if my_id.locked == 0:
-            Clock.schedule_once(osc_all_play_yourself, 60)
+            Clock.schedule_once(osc_all_play_yourself, 12)
             my_id.locked = 1
     print('got message', message[2])
 
