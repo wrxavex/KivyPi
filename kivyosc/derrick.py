@@ -308,24 +308,24 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        playone(f1)
-        playaudio()
+        thread.start_new_thread(playone, (f1, ))
+        thread.start_new_thread(play_random_audio, ("none", "null"))
         print('play f1')
     if int(message[2]) == 2:
         print ('id 2 touched')
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        playone(f2)
-        playaudio()
+        thread.start_new_thread(playone, (f2, ))
+        thread.start_new_thread(play_random_audio, ("none", "null"))
         print('play f2')
     if int(message[2]) == 3:
         print ('id 3 touched')
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        playone(f3)
-        playaudio()
+        thread.start_new_thread(playone, (f3, ))
+        thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('play f3')
     if int(message[2]) == 4:
         my_id.locked = 1
@@ -341,36 +341,36 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        playone(f5)
-        playaudio()
+        thread(playone, (f5, ))
+        thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('id 5 touched')
     if int(message[2]) == 6:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        playone(f6)
-        playaudio()
+        thread(playone, (f6, ))
+        thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('id 6 touched')
     if int(message[2]) == 7:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        playone(f7)
-        playaudio()
+        thread(playone, (f7, ))
+        thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('id 7 touched')
     if int(message[2]) == 8:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        playone(f8)
-        playaudio()
+        thread(playone, (f8, ))
+        thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('id 8 touched')
     if int(message[2]) == 9:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        playone(f9)
-        playaudio()
+        thread(playone, (f9, ))
+        thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('id 9 touched')
     if int(message[2]) == 0:
         stopall()
