@@ -98,16 +98,19 @@ def stopall():
     if v4.is_available == 1:
         v4.is_available = 0
         v4.proc.stdin.write('q')
+
     if a1.is_available == 1:
         a1.is_available = 0
         a1.proc.stdin.write('q')
+        print ('a1 stop')
     if a2.is_available == 1:
         a2.is_available = 0
         a2.proc.stdin.write('q')
+        print ('a2 stop')
     if a3.is_available == 1:
         a3.is_available = 0
         a3.proc.stdin.write('q')
-        
+        print ('a3 stop')
     if my_video.is_available == 1:
         my_video.is_available = 0
         my_video.proc.stdin.write('q')
