@@ -6,11 +6,14 @@ import set_id
 from kivy.clock import Clock
 from time import sleep
 import random
+
 my_id = set_id.id_setter()
 print(my_id.my_movie)
 
 serviceport = 8999
-activityport = 9999
+
+FullHD = "0,0,1920,1080"
+TouchScreen = "0,0,800,480"
 
 
 def osc_all_play_yourself(dt):
@@ -55,7 +58,7 @@ def stopFS():
         playAll()
 
 
-def stopall():
+def stopAll():
     if f1.is_available == 1:
         f1.is_available = 0
         f1.proc.stdin.write('q')
@@ -83,7 +86,6 @@ def stopall():
     if f9.is_available == 1:
         f9.is_available = 0
         f9.proc.stdin.write('q')
-        
     if v1.is_available == 1:
         v1.is_available = 0
         v1.proc.stdin.write('q')
@@ -96,16 +98,6 @@ def stopall():
     if v4.is_available == 1:
         v4.is_available = 0
         v4.proc.stdin.write('q')
-    if a1.is_available == 1:
-        a1.is_available = 0
-        a1.proc.stdin.write('q')
-    if a2.is_available == 1:
-        a2.is_available = 0
-        a2.proc.stdin.write('q')
-    if a3.is_available == 1:
-        a3.is_available = 0
-        a3.proc.stdin.write('q')
-        
     if my_video.is_available == 1:
         my_video.is_available = 0
         my_video.proc.stdin.write('q')
@@ -131,15 +123,6 @@ def playone(omxvideo):
         omxvideo.is_available = 1
         omxvideo.videoPlay()
 
-
-def playaudio(audio_file):
-    if random.randint(1, 3) == 1:
-        a1.audio_play()
-    if random.randint(1, 3) == 2:
-        a2.audio_play()
-    if random.randint(1, 3) == 3:
-        a3.audio_play()
-        
 
 def stopVideo(videoins):
     if videoins.is_available == 1:
@@ -173,7 +156,7 @@ def croparea_setter(id):
     if id == 8:
         crop_area = "240,320,480,480"
         return crop_area
-    if id ==9:
+    if id == 9:
         crop_area = "480,320,720,480"
         return crop_area
 
@@ -196,7 +179,9 @@ class OmxVideoPlayer:
         OmxVideoPlayer.VideoCount += 1
 
     def videoPlay(self):
-        self.proc = subprocess.Popen(['omxplayer','--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop], stdin=subprocess.PIPE)
+        self.proc = subprocess.Popen(
+            ['omxplayer', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop],
+            stdin=subprocess.PIPE)
 
     def videoCount(self):
         print (OmxVideoPlayer.VideoCount)
@@ -207,55 +192,27 @@ class OmxVideoPlayer:
             self.proc.stdin.write('q')
 
 
-class OmxAudioPlayer:
-    AudioCount = 0
+v1 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/1.mp4")
+v2 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/2.mp4")
+v3 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/3.mp4")
+v4 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/4.mp4")
 
-    def __init__(self, name):
-        self.name = name
-        self.is_playing = 0
-        self.is_available = 0
-        self.proc = 0
-        OmxAudioPlayer.AudioCount += 1
+f1 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/1.mp4")
+f2 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/2.mp4")
+f3 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/3.mp4")
+f4 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/4.mp4")
+f5 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/5.mp4")
+f6 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/6.mp4")
+f7 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/7.mp4")
+f8 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/8.mp4")
+f9 = OmxVideoPlayer(TouchScreen, croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/9.mp4")
 
-    def audio_play(self):
-        self.proc = subprocess.Popen(['omxplayer','-o','local',self.name], stdin=subprocess.PIPE)
+v1fs = OmxVideoPlayer(TouchScreen, FullHD, "/home/pi/newTaipei/1.mp4")
+v2fs = OmxVideoPlayer(TouchScreen, FullHD, "/home/pi/newTaipei/2.mp4")
+v3fs = OmxVideoPlayer(TouchScreen, FullHD, "/home/pi/newTaipei/3.mp4")
+v4fs = OmxVideoPlayer(TouchScreen, FullHD, "/home/pi/newTaipei/4.mp4")
 
-    @staticmethod
-    def audio_count():
-        print (OmxVideoPlayer.AudioCount)
-
-    def kill_audio(self):
-        if self.is_playing == 1:
-            self.is_playing = 0
-            self.proc.stdin.write('q')
-
-v1 = OmxVideoPlayer("0,0,400,240", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/1.mp4")
-v2 = OmxVideoPlayer("400,0,800,240", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/2.mp4")
-v3 = OmxVideoPlayer("0,240,400,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/3.mp4")
-v4 = OmxVideoPlayer("400,240,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/4.mp4")
-
-
-f1 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/1.mp4")
-f2 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/2.mp4")
-f3 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/3.mp4")
-f4 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/4.mp4")
-f5 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/5.mp4")
-f6 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/6.mp4")
-f7 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/7.mp4")
-f8 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/8.mp4")
-f9 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/9.mp4")
-
-a1 = OmxAudioPlayer("/home/pi/newTaipei/no1.wav")
-a2 = OmxAudioPlayer("/home/pi/newTaipei/no2.wav")
-a3 = OmxAudioPlayer("/home/pi/newTaipei/no3.wav")
-
-
-v1fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/1.mp4")
-v2fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/2.mp4")
-v3fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/3.mp4")
-v4fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/4.mp4")
-
-my_video = OmxVideoPlayer("0,0,800,480", "0,0,720,480", my_id.my_movie)
+my_video = OmxVideoPlayer(TouchScreen, "0,0,720,480", my_id.my_movie)
 
 
 def derrick_osc(message, *args):
@@ -272,70 +229,69 @@ def derrick_osc(message, *args):
     if int(message[2]) == 1:
         print ('id 1 touched')
         my_id.locked = 1
-        stopall()
-        sleep(random.uniform(0,1))
+        stopAll()
+        sleep(random.uniform(0, 1))
         playone(f1)
         print('play f1')
     if int(message[2]) == 2:
         print ('id 2 touched')
         my_id.locked = 1
-        stopall()
-        sleep(random.uniform(0,1))
+        stopAll()
+        sleep(random.uniform(0, 1))
         playone(f2)
         print('play f2')
     if int(message[2]) == 3:
         print ('id 3 touched')
         my_id.locked = 1
-        stopall()
-        sleep(random.uniform(0,1))
+        stopAll()
+        sleep(random.uniform(0, 1))
         playone(f3)
         print ('play f3')
     if int(message[2]) == 4:
         my_id.locked = 1
-        stopall()
-        sleep(random.uniform(0,1))
+        stopAll()
+        sleep(random.uniform(0, 1))
         playone(f4)
         print ('id 4 touched')
     if int(message[2]) == 5:
         my_id.locked = 1
-        stopall()
-        sleep(random.uniform(0,1))
+        stopAll()
+        sleep(random.uniform(0, 1))
         playone(f5)
         print ('id 5 touched')
     if int(message[2]) == 6:
         my_id.locked = 1
-        stopall()
-        sleep(random.uniform(0,1))
+        stopAll()
+        sleep(random.uniform(0, 1))
         playone(f6)
         print ('id 6 touched')
     if int(message[2]) == 7:
         my_id.locked = 1
-        stopall()
-        sleep(random.uniform(0,1))
+        stopAll()
+        sleep(random.uniform(0, 1))
         playone(f7)
         print ('id 7 touched')
     if int(message[2]) == 8:
         my_id.locked = 1
-        stopall()
-        sleep(random.uniform(0,1))
+        stopAll()
+        sleep(random.uniform(0, 1))
         playone(f8)
         print ('id 8 touched')
     if int(message[2]) == 9:
         my_id.locked = 1
-        stopall()
-        sleep(random.uniform(0,1))
+        stopAll()
+        sleep(random.uniform(0, 1))
         playone(f9)
         print ('id 9 touched')
     if int(message[2]) == 0:
-        stopall()
-        sleep(random.uniform(0,1))
+        stopAll()
+        sleep(random.uniform(0, 1))
         playone(my_video)
         my_id.locked = 0
         print ('Play My video')
 
 
 if __name__ == '__main__':
-    
     osc.init()
     oscid = osc.listen(ipAddr='0.0.0.0', port=serviceport)
     osc.bind(oscid, derrick_osc, '/derrick/osc')

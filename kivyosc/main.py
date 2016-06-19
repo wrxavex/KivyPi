@@ -28,7 +28,6 @@ class Controller(FloatLayout):
 
         my_info.count += 1
         print('button press')
-        osc.sendMsg('/print/x', dataArray=['/print/pd''sen2d'], ipAddr='192.168.1.139', port=activityport)
         osc.sendMsg('/print/pd', dataArray=['sen2d', my_info.count], ipAddr='192.168.1.189', port=serviceport)
         osc.sendMsg('/print/pd', dataArray=['sen2d', my_info.count], ipAddr='192.168.1.139', port=serviceport)
         osc.sendMsg('/print/pd', dataArray=['sen2d', my_info.count], ipAddr='192.168.1.193', port=serviceport)
