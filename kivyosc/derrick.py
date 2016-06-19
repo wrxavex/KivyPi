@@ -315,7 +315,7 @@ def derrick_osc(message, *args):
         stopall()
         sleep(random.uniform(0,1))
         print ('id 4 video play before')
-        # thread.start_new_thread(playone, (f4, ))
+        thread.start_new_thread(playone, (f4, ))
         print ('id 4 after video')
         thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('id 4 audio play')
