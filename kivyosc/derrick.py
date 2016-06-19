@@ -6,6 +6,8 @@ import set_id
 from kivy.clock import Clock
 from time import sleep
 import random
+import thread
+
 my_id = set_id.id_setter()
 print(my_id.my_movie)
 
@@ -297,7 +299,7 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        playone(f4)
+        thread.start_new_thread(playone, (f4))
         playaudio()
         print ('id 4 touched')
     if int(message[2]) == 5:
