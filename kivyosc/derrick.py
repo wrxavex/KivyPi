@@ -128,7 +128,7 @@ def playAll():
         v4.videoPlay()
 
 
-def playone(omxvideo):
+def playone(omxvideo, dt):
     if omxvideo.is_available == 0:
         omxvideo.is_available = 1
         omxvideo.videoPlay()
