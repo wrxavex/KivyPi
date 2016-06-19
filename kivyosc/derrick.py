@@ -61,45 +61,43 @@ def stopall():
 
     print ('stop all: \n')
 
-
-
     if f1.is_available == 1:
-        f1.is_available = 0
         f1.proc.stdin.write('q')
-        pritn ('f1 stop')
+        f1.is_available = 0
+        print ('f1 stop')
     if f2.is_available == 1:
-        f2.is_available = 0
         f2.proc.stdin.write('q')
+        f2.is_available = 0
         print ('f2 stop')
     if f3.is_available == 1:
-        f3.is_available = 0
         f3.proc.stdin.write('q')
+        f3.is_available = 0
         print ('f3 stop')
     if f4.is_available == 1:
-        f4.is_available = 0
         f4.proc.stdin.write('q')
+        f4.is_available = 0
         print ('f4 stop')
     if f5.is_available == 1:
-        f5.is_available = 0
         f5.proc.stdin.write('q')
+        f5.is_available = 0
         print ('f5 stop')
     if f6.is_available == 1:
-        f6.is_available = 0
         f6.proc.stdin.write('q')
+        f6.is_available = 0
         print ('f6 stop')
     if f7.is_available == 1:
-        f7.is_available = 0
         f7.proc.stdin.write('q')
+        f7.is_available = 0
         print ('f7 stop')
     if f8.is_available == 1:
-        f8.is_available = 0
         f8.proc.stdin.write('q')
+        f8.is_available = 0
         print ('f8 stop')
     if f9.is_available == 1:
-        f9.is_available = 0
         f9.proc.stdin.write('q')
+        f9.is_available = 0
         print ('f9 stop')
-        
+
     if v1.is_available == 1:
         v1.is_available = 0
         v1.proc.stdin.write('q')
@@ -317,6 +315,7 @@ my_video = OmxVideoPlayer("0,0,800,480", "0,0,720,480", my_id.my_movie)
 def derrick_osc(message, *args):
     print(my_id.locked, 'my id locked status 1 is locked')
     print ('f1 status is %d \n' % f1.is_available)
+    print ('f1 proc is %s \n' % f1.proc)
     print ('f2 status is %d \n' % f2.is_available)
     print ('f3 status is %d \n' % f3.is_available)
     print ('f4 status is %d \n' % f4.is_available)
@@ -331,7 +330,7 @@ def derrick_osc(message, *args):
     print ('a3 status is %d \n' % a3.is_available)
 
     print ('MY video status is %d \n' % my_video.is_available)
-    print ('my video proci is %s \n' % my_video.proc)
+    print ('my video proc is %s \n' % my_video.proc)
 
 
     if int(message[2]) != int(my_id.id_to_set):
