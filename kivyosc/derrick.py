@@ -140,7 +140,7 @@ def play_one_v2(omxvideo, dt):
         omxvideo.videoPlay()
 
 
-def play_audio(audio_file, dt):
+def play_random_audio(seed, dt):
     if random.randint(1, 3) == 1:
         if a1.is_available == 0:
             a1.is_available = 1
@@ -315,9 +315,9 @@ def derrick_osc(message, *args):
         stopall()
         sleep(random.uniform(0,1))
         print ('id 4 video play before')
-        # thread.start_new_thread(playone, (f4, ))
+        thread.start_new_thread(playone, (f4, ))
         print ('id 4 after video')
-        thread.start_new_thread(play_audio, (a1, ""))
+        thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('id 4 audio play')
 
     if int(message[2]) == 5:
