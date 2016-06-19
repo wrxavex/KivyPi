@@ -123,6 +123,7 @@ def stopall():
     if my_video.is_available == 1:
         my_video.is_available = 0
         my_video.proc.stdin.write('q')
+        print ('my video stop')
 
 
 def playAll():
