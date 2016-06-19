@@ -61,30 +61,39 @@ def stopall():
     if f1.is_available == 1:
         f1.is_available = 0
         f1.proc.stdin.write('q')
+        pritn ('f1 stop')
     if f2.is_available == 1:
         f2.is_available = 0
         f2.proc.stdin.write('q')
+        print ('f2 stop')
     if f3.is_available == 1:
         f3.is_available = 0
         f3.proc.stdin.write('q')
+        print ('f3 stop')
     if f4.is_available == 1:
         f4.is_available = 0
         f4.proc.stdin.write('q')
+        print ('f4 stop')
     if f5.is_available == 1:
         f5.is_available = 0
         f5.proc.stdin.write('q')
+        print ('f5 stop')
     if f6.is_available == 1:
         f6.is_available = 0
         f6.proc.stdin.write('q')
+        print ('f6 stop')
     if f7.is_available == 1:
         f7.is_available = 0
         f7.proc.stdin.write('q')
+        print ('f7 stop')
     if f8.is_available == 1:
         f8.is_available = 0
         f8.proc.stdin.write('q')
+        print ('f8 stop')
     if f9.is_available == 1:
         f9.is_available = 0
         f9.proc.stdin.write('q')
+        print ('f9 stop')
         
     if v1.is_available == 1:
         v1.is_available = 0
