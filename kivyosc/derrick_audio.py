@@ -17,7 +17,7 @@ class DerrickWidget(Widget):
     pass
 
 
-def stopAll():
+def stop_all():
 
     if a1.is_available == 1:
         a1.is_available = 0
@@ -33,7 +33,7 @@ def stopAll():
         print ('a3 stop')
 
 
-def play_random_audio(seed, dt):
+def play_random_audio():
     random_number = random.randint(1, 3)
     print ('random number is %d' % random_number)
     if random_number == 1:
@@ -76,7 +76,7 @@ class OmxAudioPlayer:
 
     @staticmethod
     def audio_count():
-        print (OmxVideoPlayer.AudioCount)
+        print (OmxAudioPlayer.AudioCount)
 
     def kill_audio(self):
         if self.is_playing == 1:
@@ -91,7 +91,7 @@ a3 = OmxAudioPlayer("/home/pi/newTaipei/no3.wav")
 def derrick_osc(message, *args):
 
     print('got message', message[2])
-    stopAll()
+    stop_all()
     play_random_audio()
 
 
