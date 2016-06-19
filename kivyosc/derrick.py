@@ -331,6 +331,7 @@ def derrick_osc(message, *args):
     print ('a3 status is %d \n' % a3.is_available)
 
     print ('MY video status is %d \n' % my_video.is_available)
+    print ('my video proci is %s \n' % my_video.proc)
 
 
     if int(message[2]) != int(my_id.id_to_set):
