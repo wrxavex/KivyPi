@@ -177,45 +177,45 @@ def stopall():
     #     my_video.proc.stdin.write('q')
     #     print ('my video stop')
 
-    if sys.getsizeof(f1.proc) == 32:
+    if sys.getsizeof(f1.proc) > 12:
         f1.proc.stdin.write('q')
         print ('f1 stop')
-    if sys.getsizeof(f2.proc) == 32:
+    if sys.getsizeof(f2.proc) > 12:
         f2.proc.stdin.write('q')
         print ('f2 stop')
-    if sys.getsizeof(f3.proc) == 32:
+    if sys.getsizeof(f3.proc) > 12:
         f3.proc.stdin.write('q')
         print ('f3 stop')
-    if sys.getsizeof(f4.proc) == 32:
+    if sys.getsizeof(f4.proc) > 12:
         f4.proc.stdin.write('q')
         print ('f4 stop')
-    if sys.getsizeof(f5.proc) == 32:
+    if sys.getsizeof(f5.proc) > 12:
         f5.proc.stdin.write('q')
         print ('f5 stop')
-    if sys.getsizeof(f6.proc) == 32:
+    if sys.getsizeof(f6.proc) > 12:
         f6.proc.stdin.write('q')
         print ('f6 stop')
-    if sys.getsizeof(f7.proc) == 32:
+    if sys.getsizeof(f7.proc) > 12:
         f7.proc.stdin.write('q')
         print ('f7 stop')
-    if sys.getsizeof(f8.proc) == 32:
+    if sys.getsizeof(f8.proc) > 12:
         f8.proc.stdin.write('q')
         print ('f8 stop')
-    if sys.getsizeof(f9.proc) == 32:
+    if sys.getsizeof(f9.proc) > 12:
         f9.proc.stdin.write('q')
         print ('f9 stop')
 
-    if sys.getsizeof(a1.proc) == 32:
+    if sys.getsizeof(a1.proc) > 12:
         a1.proc.stdin.write('q')
         print ('a1 stop')
-    if sys.getsizeof(a2.proc) == 32:
+    if sys.getsizeof(a2.proc) > 12:
         a2.proc.stdin.write('q')
         print ('a2 stop')
-    if sys.getsizeof(a3.proc) == 32:
+    if sys.getsizeof(a3.proc) > 12:
         a3.proc.stdin.write('q')
         print ('a3 stop')
 
-    if sys.getsizeof(my_video.proc) == 32:
+    if sys.getsizeof(my_video.proc) > 12:
         my_video.proc = 0
         my_video.proc.stdin.write('q')
         print ('my video stop')
