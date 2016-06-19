@@ -146,71 +146,70 @@ def stopall():
     #     my_video.proc.stdin.write('q')
     #     print ('my video stop')
 
-
-    if f1.proc == 1:
+    if f1.proc > 0:
         f1.proc.stdin.write('q')
         f1.proc = 0
         print ('f1 stop')
-    if f2.proc == 1:
+    if f2.proc > 0:
         f2.proc.stdin.write('q')
         f2.proc = 0
         print ('f2 stop')
-    if f3.proc == 1:
+    if f3.proc > 0:
         f3.proc.stdin.write('q')
         f3.proc = 0
         print ('f3 stop')
-    if f4.proc == 1:
+    if f4.proc > 0:
         f4.proc.stdin.write('q')
         f4.proc = 0
         print ('f4 stop')
-    if f5.proc == 1:
+    if f5.proc > 0:
         f5.proc.stdin.write('q')
         f5.proc = 0
         print ('f5 stop')
-    if f6.proc == 1:
+    if f6.proc > 0:
         f6.proc.stdin.write('q')
         f6.proc = 0
         print ('f6 stop')
-    if f7.proc == 1:
+    if f7.proc > 0:
         f7.proc.stdin.write('q')
         f7.proc = 0
         print ('f7 stop')
-    if f8.proc == 1:
+    if f8.proc > 0:
         f8.proc.stdin.write('q')
         f8.proc = 0
         print ('f8 stop')
-    if f9.proc == 1:
+    if f9.proc > 0:
         f9.proc.stdin.write('q')
         f9.proc = 0
         print ('f9 stop')
 
-    if v1.proc == 1:
+    if v1.proc > 0:
         v1.proc = 0
         v1.proc.stdin.write('q')
-    if v2.proc == 1:
+    if v2.proc > 0:
         v2.proc = 0
         v2.proc.stdin.write('q')
-    if v3.proc == 1:
+    if v3.proc > 0:
         v3.proc = 0
         v3.proc.stdin.write('q')
-    if v4.proc == 1:
+    if v4.proc > 0:
         v4.proc = 0
         v4.proc.stdin.write('q')
 
-    if a1.proc == 1:
+    if a1.proc > 0:
         a1.proc = 0
         a1.proc.stdin.write('q')
         print ('a1 stop')
-    if a2.proc == 1:
+    if a2.proc > 0:
         a2.proc = 0
         a2.proc.stdin.write('q')
         print ('a2 stop')
-    if a3.proc == 1:
+    if a3.proc > 0:
         a3.proc = 0
         a3.proc.stdin.write('q')
         print ('a3 stop')
 
-    if my_video.proc == 1:
+    if my_video.proc > 0:
         my_video.proc = 0
         my_video.proc.stdin.write('q')
         print ('my video stop')
