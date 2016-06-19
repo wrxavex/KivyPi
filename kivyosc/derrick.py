@@ -308,7 +308,7 @@ def derrick_osc(message, *args):
         print ('id 4 video play before')
         # thread.start_new_thread(playone, (f4, ))
         print ('id 4 after video')
-        thread.start_new_thread(play_audio, (a1, ))
+        a1.audio_play()
         print ('id 4 audio play')
 
     if int(message[2]) == 5:
