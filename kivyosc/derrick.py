@@ -156,6 +156,8 @@ def play_random_audio(seed, dt):
             a3.is_available = 1
             print ('playing audio 3')
             a3.audio_play()
+    else:
+        print ('what is wrong')
         
 
 def stopVideo(videoins):
