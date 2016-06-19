@@ -272,7 +272,7 @@ class OmxAudioPlayer:
         OmxAudioPlayer.AudioCount += 1
 
     def audio_play(self):
-        self.proc = subprocess.Popen(['omxplayer','-o', 'local', '--loop',self.name], stdin=subprocess.PIPE)
+        self.proc = subprocess.Popen(['omxplayer','-o', 'local', '--loop', '--no-osd', self.name], stdin=subprocess.PIPE)
 
     @staticmethod
     def audio_count():
