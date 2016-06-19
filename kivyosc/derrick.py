@@ -362,7 +362,8 @@ def derrick_osc(message, *args):
     if int(message[2]) == 0:
         stopall()
         sleep(random.uniform(0,1))
-        playone(my_video)
+        thread.start_new_thread(playone, (my_video, ))
+        thread.start_new_thread(play_random_audio, ("none", "null"))
         my_id.locked = 0
         print ('Play My video')
 
