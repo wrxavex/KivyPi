@@ -144,14 +144,17 @@ def play_audio(audio_file, dt):
     if random.randint(1, 3) == 1:
         if a1.is_available == 0:
             a1.is_available = 1
+            print ('playing audio 1')
             a1.audio_play()
     if random.randint(1, 3) == 2:
         if a2.is_available == 0:
             a2.is_available = 1
+            print ('playing audio 2')
             a2.audio_play()
     if random.randint(1, 3) == 3:
         if a3.is_available == 0:
             a3.is_available = 1
+            print ('playing audio 3')
             a3.audio_play()
         
 
