@@ -309,6 +309,7 @@ def derrick_osc(message, *args):
         # thread.start_new_thread(playone, (f4, ))
         print ('id 4 after video')
         thread.start_new_thread(play_audio, (dt, ))
+        print ('id 4 audio play')
 
     if int(message[2]) == 5:
         my_id.locked = 1
