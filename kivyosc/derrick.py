@@ -321,6 +321,7 @@ def derrick_osc(message, *args):
         print('play f2')
         thread.start_new_thread(play_random_audio, ("none", "null"))
         print('f2 with audio')
+
     if int(message[2]) == 3:
         print ('id 3 touched')
         my_id.locked = 1
@@ -330,6 +331,7 @@ def derrick_osc(message, *args):
         print ('play f3')
         thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('f3 with audio')
+
     if int(message[2]) == 4:
         my_id.locked = 1
         stopall()
@@ -348,14 +350,15 @@ def derrick_osc(message, *args):
         print ('play f5')
         thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('f5 with audio')
+
     if int(message[2]) == 6:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
         thread.start_new_thread(playone, (f6, ))
-        print ('play f5')
+        print ('play f6')
         thread.start_new_thread(play_random_audio, ("none", "null"))
-        print ('f5 with auido')
+        print ('f6 with auido')
     if int(message[2]) == 7:
         my_id.locked = 1
         stopall()
@@ -364,6 +367,7 @@ def derrick_osc(message, *args):
         print ('play f7')
         thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('f7 with audio')
+
     if int(message[2]) == 8:
         my_id.locked = 1
         stopall()
@@ -372,6 +376,7 @@ def derrick_osc(message, *args):
         print ('play f8')
         thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('f8 with audio')
+
     if int(message[2]) == 9:
         my_id.locked = 1
         stopall()
@@ -381,6 +386,7 @@ def derrick_osc(message, *args):
         print ('play f9')
         thread.start_new_thread(play_random_audio, ("none", "null"))
         print ('f9 with audio')
+
     if int(message[2]) == 0:
         stopall()
         sleep(random.uniform(0,1))
