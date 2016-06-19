@@ -128,7 +128,13 @@ def playAll():
         v4.videoPlay()
 
 
-def playone(omxvideo, dt):
+def playone(omxvideo):
+    if omxvideo.is_available == 0:
+        omxvideo.is_available = 1
+        omxvideo.videoPlay()
+
+
+def play_one_v2(omxvideo, dt):
     if omxvideo.is_available == 0:
         omxvideo.is_available = 1
         omxvideo.videoPlay()
@@ -299,7 +305,7 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        thread.start_new_thread(playone, (f4, ""))
+        thread.start_new_thread(play_one_v2, (f4, ""))
         playaudio()
         print ('id 4 touched')
     if int(message[2]) == 5:
