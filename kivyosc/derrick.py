@@ -275,6 +275,7 @@ def derrick_osc(message, *args):
         stopall()
         sleep(random.uniform(0,1))
         playone(f1)
+        playaudio()
         print('play f1')
     if int(message[2]) == 2:
         print ('id 2 touched')
@@ -282,6 +283,7 @@ def derrick_osc(message, *args):
         stopall()
         sleep(random.uniform(0,1))
         playone(f2)
+        playaudio()
         print('play f2')
     if int(message[2]) == 3:
         print ('id 3 touched')
@@ -289,42 +291,49 @@ def derrick_osc(message, *args):
         stopall()
         sleep(random.uniform(0,1))
         playone(f3)
+        playaudio()
         print ('play f3')
     if int(message[2]) == 4:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
         playone(f4)
+        playaudio()
         print ('id 4 touched')
     if int(message[2]) == 5:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
         playone(f5)
+        playaudio()
         print ('id 5 touched')
     if int(message[2]) == 6:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
         playone(f6)
+        playaudio()
         print ('id 6 touched')
     if int(message[2]) == 7:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
         playone(f7)
+        playaudio()
         print ('id 7 touched')
     if int(message[2]) == 8:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
         playone(f8)
+        playaudio()
         print ('id 8 touched')
     if int(message[2]) == 9:
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
         playone(f9)
+        playaudio()
         print ('id 9 touched')
     if int(message[2]) == 0:
         stopall()
