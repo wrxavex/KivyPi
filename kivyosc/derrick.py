@@ -77,21 +77,21 @@ def stopall():
 
     print ('MY video status is %d \n' % my_video.is_available)
 
-    print ('f1 proc is %d \n' % f1.proc)
-    print ('f2 proc is %d \n' % f2.proc)
-    print ('f3 proc is %d \n' % f3.proc)
-    print ('f4 proc is %d \n' % f4.proc)
-    print ('f5 proc is %d \n' % f5.proc)
-    print ('f6 proc is %d \n' % f6.proc)
-    print ('f7 proc is %d \n' % f7.proc)
-    print ('f8 proc is %d \n' % f8.proc)
-    print ('f9 proc is %d \n' % f9.proc)
+    print ('f1 proc is %s \n' % f1.proc)
+    print ('f2 proc is %s \n' % f2.proc)
+    print ('f3 proc is %s \n' % f3.proc)
+    print ('f4 proc is %s \n' % f4.proc)
+    print ('f5 proc is %s \n' % f5.proc)
+    print ('f6 proc is %s \n' % f6.proc)
+    print ('f7 proc is %s \n' % f7.proc)
+    print ('f8 proc is %s \n' % f8.proc)
+    print ('f9 proc is %s \n' % f9.proc)
+                        s
+    print ('a1 proc is %s \n' % a1.proc)
+    print ('a2 proc is %s \n' % a2.proc)
+    print ('a3 proc is %s \n' % a3.proc)
 
-    print ('a1 proc is %d \n' % a1.proc)
-    print ('a2 proc is %d \n' % a2.proc)
-    print ('a3 proc is %d \n' % a3.proc)
-
-    print ('MY video proc is %d \n' % my_video.proc)
+    print ('MY video proc is %s \n' % my_video.proc)
 
     #
     # if f1.is_available == 1:
