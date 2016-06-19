@@ -89,12 +89,17 @@ def stopall():
 
     print ('a1 proc is %s \n' % a1.proc)
     print (type(a1.proc))
+    print (type(a1.proc) is object)
+    print (type(a1.proc) is classmethod)
 
     print ('a2 proc is %s \n' % a2.proc)
     print (type(a2.proc))
+    print (type(a2.proc) is object)
+    print (type(a2.proc) is classmethod)
     print ('a3 proc is %s \n' % a3.proc)
     print (type(a3.proc))
-
+    print (type(a3.proc) is object)
+    print (type(a3.proc) is classmethod)
     print ('MY video proc is %s \n' % my_video.proc)
 
     #
