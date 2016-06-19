@@ -7,6 +7,7 @@ from kivy.clock import Clock
 from time import sleep
 import random
 import thread
+import sys
 
 my_id = set_id.id_setter()
 print(my_id.my_movie)
@@ -90,6 +91,7 @@ def stopall():
     print ('a1 proc is %s \n' % a1.proc)
     print (type(a1.proc))
     print (type(a1.proc) is object)
+    print (type(a1.proc) > 0)
     print (type(a1.proc) is classmethod)
 
     print ('a2 proc is %s \n' % a2.proc)
@@ -101,6 +103,7 @@ def stopall():
     print (type(a3.proc) is object)
     print (type(a3.proc) is classmethod)
     print ('MY video proc is %s \n' % my_video.proc)
+    print(sys.getsizeof(my_video.proc))
 
     #
     # if f1.is_available == 1:
