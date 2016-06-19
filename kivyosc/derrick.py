@@ -142,11 +142,11 @@ def play_one_v2(omxvideo, dt):
 
 def play_audio(audio_file, dt):
     if random.randint(1, 3) == 1:
-        a1.audio_play()
+        audio_file.audio_play()
     if random.randint(1, 3) == 2:
-        a2.audio_play()
+        audio_file.audio_play()
     if random.randint(1, 3) == 3:
-        a3.audio_play()
+        audio_file.audio_play()
         
 
 def stopVideo(videoins):
