@@ -142,17 +142,17 @@ def play_one_v2(omxvideo, dt):
 
 def play_audio(audio_file, dt):
     if random.randint(1, 3) == 1:
-        if audio_file.is_available == 0:
-            audio_file.is_available = 1
-            audio_file.audio_play()
+        if a1.is_available == 0:
+            a1.is_available = 1
+            a1.audio_play()
     if random.randint(1, 3) == 2:
-        if audio_file.is_available == 0:
-            audio_file.is_available = 1
-            audio_file.audio_play()
+        if a2.is_available == 0:
+            a2.is_available = 1
+            a2.audio_play()
     if random.randint(1, 3) == 3:
-        if audio_file.is_available == 0:
-            audio_file.is_available = 1
-            audio_file.audio_play()
+        if a3.is_available == 0:
+            a3.is_available = 1
+            a3.audio_play()
         
 
 def stopVideo(videoins):
@@ -187,7 +187,7 @@ def croparea_setter(id):
     if id == 8:
         crop_area = "240,320,480,480"
         return crop_area
-    if id ==9:
+    if id == 9:
         crop_area = "480,320,720,480"
         return crop_area
 
