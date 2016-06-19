@@ -141,17 +141,19 @@ def play_one_v2(omxvideo, dt):
 
 
 def play_random_audio(seed, dt):
-    if random.randint(1, 3) == 1:
+    random_number = random.randint(1, 3)
+    print ('random number is %d' % random_number)
+    if random_number == 1:
         if a1.is_available == 0:
             a1.is_available = 1
             print ('playing audio 1')
             a1.audio_play()
-    if random.randint(1, 3) == 2:
+    if random_number == 2:
         if a2.is_available == 0:
             a2.is_available = 1
             print ('playing audio 2')
             a2.audio_play()
-    if random.randint(1, 3) == 3:
+    if random_number == 3:
         if a3.is_available == 0:
             a3.is_available = 1
             print ('playing audio 3')
