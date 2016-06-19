@@ -61,71 +61,157 @@ def stopall():
 
     print ('stop all: \n')
 
-    if f1.is_available == 1:
+    print ('f1 status is %d \n' % f1.is_available)
+    print ('f2 status is %d \n' % f2.is_available)
+    print ('f3 status is %d \n' % f3.is_available)
+    print ('f4 status is %d \n' % f4.is_available)
+    print ('f5 status is %d \n' % f5.is_available)
+    print ('f6 status is %d \n' % f6.is_available)
+    print ('f7 status is %d \n' % f7.is_available)
+    print ('f8 status is %d \n' % f8.is_available)
+    print ('f9 status is %d \n' % f9.is_available)
+
+    print ('a1 status is %d \n' % a1.is_available)
+    print ('a2 status is %d \n' % a2.is_available)
+    print ('a3 status is %d \n' % a3.is_available)
+
+    print ('MY video status is %d \n' % my_video.is_available)
+
+    #
+    # if f1.is_available == 1:
+    #     f1.proc.stdin.write('q')
+    #     f1.is_available = 0
+    #     print ('f1 stop')
+    # if f2.is_available == 1:
+    #     f2.proc.stdin.write('q')
+    #     f2.is_available = 0
+    #     print ('f2 stop')
+    # if f3.is_available == 1:
+    #     f3.proc.stdin.write('q')
+    #     f3.is_available = 0
+    #     print ('f3 stop')
+    # if f4.is_available == 1:
+    #     f4.proc.stdin.write('q')
+    #     f4.is_available = 0
+    #     print ('f4 stop')
+    # if f5.is_available == 1:
+    #     f5.proc.stdin.write('q')
+    #     f5.is_available = 0
+    #     print ('f5 stop')
+    # if f6.is_available == 1:
+    #     f6.proc.stdin.write('q')
+    #     f6.is_available = 0
+    #     print ('f6 stop')
+    # if f7.is_available == 1:
+    #     f7.proc.stdin.write('q')
+    #     f7.is_available = 0
+    #     print ('f7 stop')
+    # if f8.is_available == 1:
+    #     f8.proc.stdin.write('q')
+    #     f8.is_available = 0
+    #     print ('f8 stop')
+    # if f9.is_available == 1:
+    #     f9.proc.stdin.write('q')
+    #     f9.is_available = 0
+    #     print ('f9 stop')
+    #
+    # if v1.is_available == 1:
+    #     v1.is_available = 0
+    #     v1.proc.stdin.write('q')
+    # if v2.is_available == 1:
+    #     v2.is_available = 0
+    #     v2.proc.stdin.write('q')
+    # if v3.is_available == 1:
+    #     v3.is_available = 0
+    #     v3.proc.stdin.write('q')
+    # if v4.is_available == 1:
+    #     v4.is_available = 0
+    #     v4.proc.stdin.write('q')
+    #
+    # if a1.is_available == 1:
+    #     a1.is_available = 0
+    #     a1.proc.stdin.write('q')
+    #     print ('a1 stop')
+    # if a2.is_available == 1:
+    #     a2.is_available = 0
+    #     a2.proc.stdin.write('q')
+    #     print ('a2 stop')
+    # if a3.is_available == 1:
+    #     a3.is_available = 0
+    #     a3.proc.stdin.write('q')
+    #     print ('a3 stop')
+    #
+    # if my_video.is_available == 1:
+    #     my_video.is_available = 0
+    #     my_video.proc.stdin.write('q')
+    #     print ('my video stop')
+
+
+    if f1.proc == 1:
         f1.proc.stdin.write('q')
-        f1.is_available = 0
+        f1.proc = 0
         print ('f1 stop')
-    if f2.is_available == 1:
+    if f2.proc == 1:
         f2.proc.stdin.write('q')
-        f2.is_available = 0
+        f2.proc = 0
         print ('f2 stop')
-    if f3.is_available == 1:
+    if f3.proc == 1:
         f3.proc.stdin.write('q')
-        f3.is_available = 0
+        f3.proc = 0
         print ('f3 stop')
-    if f4.is_available == 1:
+    if f4.proc == 1:
         f4.proc.stdin.write('q')
-        f4.is_available = 0
+        f4.proc = 0
         print ('f4 stop')
-    if f5.is_available == 1:
+    if f5.proc == 1:
         f5.proc.stdin.write('q')
-        f5.is_available = 0
+        f5.proc = 0
         print ('f5 stop')
-    if f6.is_available == 1:
+    if f6.proc == 1:
         f6.proc.stdin.write('q')
-        f6.is_available = 0
+        f6.proc = 0
         print ('f6 stop')
-    if f7.is_available == 1:
+    if f7.proc == 1:
         f7.proc.stdin.write('q')
-        f7.is_available = 0
+        f7.proc = 0
         print ('f7 stop')
-    if f8.is_available == 1:
+    if f8.proc == 1:
         f8.proc.stdin.write('q')
-        f8.is_available = 0
+        f8.proc = 0
         print ('f8 stop')
-    if f9.is_available == 1:
+    if f9.proc == 1:
         f9.proc.stdin.write('q')
-        f9.is_available = 0
+        f9.proc = 0
         print ('f9 stop')
 
-    if v1.is_available == 1:
-        v1.is_available = 0
+    if v1.proc == 1:
+        v1.proc = 0
         v1.proc.stdin.write('q')
-    if v2.is_available == 1:
-        v2.is_available = 0
+    if v2.proc == 1:
+        v2.proc = 0
         v2.proc.stdin.write('q')
-    if v3.is_available == 1:
-        v3.is_available = 0
+    if v3.proc == 1:
+        v3.proc = 0
         v3.proc.stdin.write('q')
-    if v4.is_available == 1:
-        v4.is_available = 0
+    if v4.proc == 1:
+        v4.proc = 0
         v4.proc.stdin.write('q')
 
-    if a1.is_available == 1:
-        a1.is_available = 0
+    if a1.proc == 1:
+        a1.proc = 0
         a1.proc.stdin.write('q')
         print ('a1 stop')
-    if a2.is_available == 1:
-        a2.is_available = 0
+    if a2.proc == 1:
+        a2.proc = 0
         a2.proc.stdin.write('q')
         print ('a2 stop')
-    if a3.is_available == 1:
-        a3.is_available = 0
+    if a3.proc == 1:
+        a3.proc = 0
         a3.proc.stdin.write('q')
         print ('a3 stop')
 
-    if my_video.is_available == 1:
-        my_video.is_available = 0
+    if my_video.proc == 1:
+        my_video.proc = 0
         my_video.proc.stdin.write('q')
         print ('my video stop')
 
@@ -313,26 +399,6 @@ my_video = OmxVideoPlayer("0,0,800,480", "0,0,720,480", my_id.my_movie)
 
 
 def derrick_osc(message, *args):
-    print(my_id.locked, 'my id locked status 1 is locked')
-    print ('f1 status is %d \n' % f1.is_available)
-    print ('f1 proc is %s \n' % f1.proc)
-    print ('f2 status is %d \n' % f2.is_available)
-    print ('f3 status is %d \n' % f3.is_available)
-    print ('f4 status is %d \n' % f4.is_available)
-    print ('f5 status is %d \n' % f5.is_available)
-    print ('f6 status is %d \n' % f6.is_available)
-    print ('f7 status is %d \n' % f7.is_available)
-    print ('f8 status is %d \n' % f8.is_available)
-    print ('f9 status is %d \n' % f9.is_available)
-
-    print ('a1 status is %d \n' % a1.is_available)
-    print ('a2 status is %d \n' % a2.is_available)
-    print ('a3 status is %d \n' % a3.is_available)
-
-    print ('MY video status is %d \n' % my_video.is_available)
-    if my_video.proc > 0:
-        print ('my video proc is %s \n' % my_video.proc)
-
 
     if int(message[2]) != int(my_id.id_to_set):
         print('random delay')
