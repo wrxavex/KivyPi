@@ -299,7 +299,7 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         stopall()
         sleep(random.uniform(0,1))
-        thread.start_new_thread(playone, (f4))
+        thread.start_new_thread(playone, (f4, ""))
         playaudio()
         print ('id 4 touched')
     if int(message[2]) == 5:
