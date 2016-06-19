@@ -93,15 +93,18 @@ def stopall():
     print (type(a1.proc) is object)
     print (type(a1.proc) > 0)
     print (type(a1.proc) is classmethod)
+    print(sys.getsizeof(a1.proc))
 
     print ('a2 proc is %s \n' % a2.proc)
     print (type(a2.proc))
     print (type(a2.proc) is object)
     print (type(a2.proc) is classmethod)
     print ('a3 proc is %s \n' % a3.proc)
+    print(sys.getsizeof(a2.proc))
     print (type(a3.proc))
     print (type(a3.proc) is object)
     print (type(a3.proc) is classmethod)
+    print(sys.getsizeof(a3.proc))
     print ('MY video proc is %s \n' % my_video.proc)
     print(sys.getsizeof(my_video.proc))
 
