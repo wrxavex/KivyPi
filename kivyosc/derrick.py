@@ -210,8 +210,7 @@ def playone(omxvideo):
     #        omxvideo.is_available = 1
     #        omxvideo.videoPlay()
 
-    if sys.getsizeof(omxvideo.proc) < 12:
-        omxvideo.videoPlay()
+    omxvideo.videoPlay()
 
 
 def play_one_v2(omxvideo, dt):
@@ -241,8 +240,7 @@ def play_random_audio(seed, dt):
     # else:
     #     print ('what is wrong')
 
-    if sys.getsizeof(my_video.proc) < 12:
-        a3.audio_play()
+    a3.audio_play()
 
         
 
