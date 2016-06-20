@@ -8,6 +8,7 @@ from time import sleep
 import random
 
 my_id = set_id.id_setter()
+my_id.set_to_new_ip()
 print(my_id.my_movie)
 
 serviceport = 8999
