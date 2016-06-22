@@ -19,3 +19,6 @@ class id_setter:
             print('The ID not a valid number')
 
         print('ID Set Done')
+
+if __name__ == '__main__':
+    id_setter.set_to_new_ip()
