@@ -21,4 +21,5 @@ class id_setter:
         print('ID Set Done')
 
 if __name__ == '__main__':
-    id_setter.set_to_new_ip()
+    my_id = id_setter()
+    my_id.set_to_new_ip()
