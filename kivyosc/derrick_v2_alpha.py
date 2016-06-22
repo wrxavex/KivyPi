@@ -9,7 +9,7 @@ import random
 import thread
 import sys
 
-my_id = set_id.id_setter()
+my_id = set_id.IDSetter()
 print(my_id.my_movie)
 
 serviceport = 8999

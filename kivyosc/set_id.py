@@ -1,5 +1,5 @@
 
-class id_setter:
+class IDSetter:
     def __init__(self):
         id_setting_file = open('/boot/set_id', 'r')
         ip_config_file = open('/home/pi/KivyPi/config/ip_conf_sample', 'r')
@@ -21,5 +21,5 @@ class id_setter:
         print('ID Set Done')
 
 if __name__ == '__main__':
-    my_id = id_setter()
+    my_id = IDSetter()
     my_id.set_to_new_ip()
