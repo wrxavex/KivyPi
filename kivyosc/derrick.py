@@ -204,7 +204,7 @@ class OmxVideoPlayer:
                 self.proc = subprocess.Popen(
                     ['omxplayer', '--orientation', '270', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop],
                     stdin=subprocess.PIPE)
-            else:
+
         else:
             self.proc = subprocess.Popen(
                 ['omxplayer', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop],
