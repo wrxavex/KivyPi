@@ -199,6 +199,16 @@ class OmxVideoPlayer:
         OmxVideoPlayer.VideoCount += 1
 
     def videoPlay(self):
+        if my_id.id_to_set == 1 or my_id.id_to_set == 4 or my_id.id_to_set == 5 or my_id.id_to_set == 7:
+            self.proc = subprocess.Popen(
+                ['omxplayer','--orientation','90', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop],
+                stdin=subprocess.PIPE)
+        else:
+            self.proc = subprocess.Popen(
+                ['omxplayer', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop],
+                stdin=subprocess.PIPE)
+
+    def self_video_play(self):
         self.proc = subprocess.Popen(
             ['omxplayer', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop],
             stdin=subprocess.PIPE)
@@ -242,7 +252,7 @@ def derrick_osc(message, *args):
 
     else:
         if my_id.locked == 0:
-            Clock.schedule_once(osc_all_play_yourself, 60)
+            Clock.schedule_once(osc_all_play_yourself, 90)
             my_id.locked = 1
     print('got message', message[2])
 
@@ -250,63 +260,65 @@ def derrick_osc(message, *args):
         print ('id 1 touched')
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0, 1))
+        sleep(random.uniform(0, 3))
         playone(f1)
         print('play f1')
     if int(message[2]) == 2:
         print ('id 2 touched')
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0, 1))
+        sleep(random.uniform(0, 3))
         playone(f2)
         print('play f2')
     if int(message[2]) == 3:
         print ('id 3 touched')
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0, 1))
+        sleep(random.uniform(0, 3))
         playone(f3)
         print ('play f3')
     if int(message[2]) == 4:
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0, 1))
+        sleep(random.uniform(0, 3))
         playone(f4)
         print ('id 4 touched')
     if int(message[2]) == 5:
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0, 1))
+        sleep(random.uniform(0, 3))
         playone(f5)
         print ('id 5 touched')
     if int(message[2]) == 6:
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0, 1))
+        sleep(random.uniform(0, 3))
         playone(f6)
         print ('id 6 touched')
     if int(message[2]) == 7:
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0, 1))
+        sleep(random.uniform(0, 3))
         playone(f7)
         print ('id 7 touched')
     if int(message[2]) == 8:
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0, 1))
+        sleep(random.uniform(0, 3))
         playone(f8)
         print ('id 8 touched')
     if int(message[2]) == 9:
         my_id.locked = 1
         stopAll()
-        sleep(random.uniform(0, 1))
+        sleep(random.uniform(0, 3))
         playone(f9)
         print ('id 9 touched')
     if int(message[2]) == 0:
         stopAll()
-        sleep(random.uniform(0, 1))
-        playone(my_video)
+        sleep(random.uniform(0, 3))
+        if my_video.is_available == 0:
+            my_video.is_available = 1
+            my_video.videoPlay()
         my_id.locked = 0
         print ('Play My video')
 

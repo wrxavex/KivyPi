@@ -10,7 +10,7 @@ class IDSetter:
 
     def set_to_new_ip(self):
         id_int = int(self.id_to_set)
-        if 1 <= id_int <= 9:
+        if 1 <= id_int <= 14:
             new_ip_config = self.ip_config.replace('replace_id_here', '23'+str(id_int))
             ip_set_file = open('/etc/dhcpcd.conf', 'w')
             ip_set_file.write(new_ip_config)
