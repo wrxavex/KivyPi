@@ -199,7 +199,8 @@ class OmxVideoPlayer:
         OmxVideoPlayer.VideoCount += 1
 
     def videoPlay(self):
-        if my_id.id_to_set == "2" or my_id.id_to_set == "3" or my_id.id_to_set == "6" or my_id.id_to_set == "8" or my_id.id_to_set == "9":
+        if int(my_id.id_to_set) == 1 or int(my_id.id_to_set) == 4 or int(my_id.id_to_set) == 5 or int(my_id.id_to_set) == 7 or int(my_id.id_to_set) == "9":
+            if self.name == "/home/pi/newTaipei/8.mp4":
             self.proc = subprocess.Popen(
                 ['omxplayer','--orientation','270', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop],
                 stdin=subprocess.PIPE)
