@@ -201,7 +201,7 @@ class OmxVideoPlayer:
     def videoPlay(self):
         if my_id.id_to_set == 2 or my_id.id_to_set == 3 or my_id.id_to_set == 6 or my_id.id_to_set == 8 or my_id.id_to_set == 9:
             self.proc = subprocess.Popen(
-                ['omxplayer','--orientation','270', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop],
+                ['omxplayer','--orientation','0', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop],
                 stdin=subprocess.PIPE)
         else:
             self.proc = subprocess.Popen(
