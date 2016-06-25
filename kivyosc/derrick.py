@@ -298,7 +298,9 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         stopAll()
         sleep(random.uniform(0, 3))
-        playone(f7)
+        if f7.is_available == 0:
+            f7.is_available = 1
+            f7.self_video_play()
         print ('id 7 touched')
     if int(message[2]) == 8:
         my_id.locked = 1
