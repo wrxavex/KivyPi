@@ -331,6 +331,8 @@ if __name__ == '__main__':
     print (my_id.id_to_set, 'id_to_set')
     print (croparea_setter(my_id.id_to_set))
 
-    playone(my_video)
+    if my_video.is_available == 0:
+        my_video.is_available = 1
+        my_video.self_video_play()
 
     DerrickApp().run()
