@@ -317,7 +317,7 @@ def derrick_osc(message, *args):
         sleep(random.uniform(0, 3))
         if my_video.is_available == 0:
             my_video.is_available = 1
-            my_video.videoPlay()
+            my_video.self_video_play()
         my_id.locked = 0
         print ('Play My video')
 
