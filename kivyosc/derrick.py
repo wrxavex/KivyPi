@@ -257,7 +257,7 @@ def derrick_osc(message, *args):
         sleep(random.uniform(0, 3))
         if f1.is_available == 0:
             f1.is_available = 1
-            f1.self_video_play()
+            f1.videoPlay()
         print('play f1')
     if int(message[2]) == 2:
         print ('id 2 touched')
@@ -266,7 +266,7 @@ def derrick_osc(message, *args):
         sleep(random.uniform(0, 3))
         if f2.is_available == 0:
             f2.is_available = 1
-            f2.videoPlay()
+            f2.self_video_play()
         print('play f2')
     if int(message[2]) == 3:
         print ('id 3 touched')
@@ -275,7 +275,7 @@ def derrick_osc(message, *args):
         sleep(random.uniform(0, 3))
         if f3.is_available == 0:
             f3.is_available = 1
-            f3.videoPlay()
+            f3.self_video_play()
         print ('play f3')
     if int(message[2]) == 4:
         my_id.locked = 1
@@ -283,7 +283,7 @@ def derrick_osc(message, *args):
         sleep(random.uniform(0, 3))
         if f4.is_available == 0:
             f4.is_available = 1
-            f4.self_video_play()
+            f4.videoPlay()
         print ('id 4 touched')
     if int(message[2]) == 5:
         my_id.locked = 1
@@ -291,7 +291,7 @@ def derrick_osc(message, *args):
         sleep(random.uniform(0, 3))
         if f5.is_available == 0:
             f5.is_available = 1
-            f5.self_video_play()
+            f5.videoPlay()
         print ('id 5 touched')
     if int(message[2]) == 6:
         my_id.locked = 1
@@ -299,7 +299,7 @@ def derrick_osc(message, *args):
         sleep(random.uniform(0, 3))
         if f6.is_available == 0:
             f6.is_available = 1
-            f6.videoPlay()
+            f6.self_video_play()
         print ('id 6 touched')
     if int(message[2]) == 7:
         my_id.locked = 1
@@ -307,7 +307,7 @@ def derrick_osc(message, *args):
         sleep(random.uniform(0, 3))
         if f7.is_available == 0:
             f7.is_available = 1
-            f7.self_video_play()
+            f7.videoPlay()
         print ('id 7 touched')
     if int(message[2]) == 8:
         my_id.locked = 1
@@ -315,7 +315,7 @@ def derrick_osc(message, *args):
         sleep(random.uniform(0, 3))
         if f8.is_available == 0:
             f8.is_available = 1
-            f8.videoPlay()
+            f8.self_video_play()
         print ('id 8 touched')
     if int(message[2]) == 9:
         my_id.locked = 1
@@ -323,7 +323,7 @@ def derrick_osc(message, *args):
         sleep(random.uniform(0, 3))
         if f9.is_available == 0:
             f9.is_available = 1
-            f9.videoPlay()
+            f9.self_video_play()
         print ('id 9 touched')
     if int(message[2]) == 0:
         stopAll()
