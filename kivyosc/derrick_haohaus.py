@@ -62,6 +62,7 @@ class DerrickWidget(Widget):
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.239', port=activityport)
 
 
+
 def stopFS():
     if v1fs.is_available == 1:
         stopVideo(v1fs)
@@ -188,23 +189,18 @@ class DerrickApp(App):
 class OmxVideoPlayer:
     VideoCount = 0
 
-    def __init__(self, pos, crop, name, number):
+    def __init__(self, pos, crop, name):
         self.pos = pos
         self.name = name
         self.is_playing = 0
         self.is_available = 0
         self.proc = 0
         self.crop = crop
-        self.number = number
         OmxVideoPlayer.VideoCount += 1
 
     def videoPlay(self):
-        if int(my_id.id_to_set) == 1 or int(my_id.id_to_set) == 4 or int(my_id.id_to_set) == 5 or int(my_id.id_to_set) == 7:
             self.proc = subprocess.Popen(['omxplayer', '--orientation', '270', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop], stdin=subprocess.PIPE)
-        else:
-            self.proc = subprocess.Popen(
-                ['omxplayer', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop],
-                stdin=subprocess.PIPE)
+
 
     def self_video_play(self):
         self.proc = subprocess.Popen(
@@ -220,27 +216,27 @@ class OmxVideoPlayer:
             self.proc.stdin.write('q')
 
 
-v1 = OmxVideoPlayer("0,0,400,240", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/1.mp4", 1)
-v2 = OmxVideoPlayer("400,0,800,240", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/2.mp4", 2)
-v3 = OmxVideoPlayer("0,240,400,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/3.mp4", 3)
-v4 = OmxVideoPlayer("400,240,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/4.mp4", 4)
+v1 = OmxVideoPlayer("0,0,400,240", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/1.mp4")
+v2 = OmxVideoPlayer("400,0,800,240", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/2.mp4")
+v3 = OmxVideoPlayer("0,240,400,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/3.mp4")
+v4 = OmxVideoPlayer("400,240,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/4.mp4")
 
-f1 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/1.mp4", 1)
-f2 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/2.mp4", 2)
-f3 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/3.mp4", 3)
-f4 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/4.mp4", 4)
-f5 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/5.mp4", 5)
-f6 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/6.mp4", 6)
-f7 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/7.mp4", 7)
-f8 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/8.mp4", 8)
-f9 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/9.mp4", 9)
+f1 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/1.mp4")
+f2 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/2.mp4")
+f3 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/3.mp4")
+f4 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/4.mp4")
+f5 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/5.mp4")
+f6 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/6.mp4")
+f7 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/7.mp4")
+f8 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/8.mp4")
+f9 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/9.mp4")
 
-v1fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/haohaus/1.mp4", 1)
-v2fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/haohaus/2.mp4", 2)
-v3fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/haohaus/3.mp4", 3)
-v4fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/haohaus/4.mp4", 4)
+v1fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/1.mp4")
+v2fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/2.mp4")
+v3fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/3.mp4")
+v4fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/4.mp4")
 
-my_video = OmxVideoPlayer("0,0,800,480", "0,0,720,480", my_id.my_movie, int(my_id.id_to_set))
+my_video = OmxVideoPlayer("0,0,800,480", "0,0,720,480", my_id.my_movie)
 
 
 def derrick_osc(message, *args):
@@ -259,39 +255,51 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         stopAll()
         sleep(random.uniform(0, 3))
-        playone(f1)
+        if f1.is_available == 0:
+            f1.is_available = 1
+            f1.self_video_play()
         print('play f1')
     if int(message[2]) == 2:
         print ('id 2 touched')
         my_id.locked = 1
         stopAll()
         sleep(random.uniform(0, 3))
-        playone(f2)
+        if f2.is_available == 0:
+            f2.is_available = 1
+            f2.videoPlay()
         print('play f2')
     if int(message[2]) == 3:
         print ('id 3 touched')
         my_id.locked = 1
         stopAll()
         sleep(random.uniform(0, 3))
-        playone(f3)
+        if f3.is_available == 0:
+            f3.is_available = 1
+            f3.videoPlay()
         print ('play f3')
     if int(message[2]) == 4:
         my_id.locked = 1
         stopAll()
         sleep(random.uniform(0, 3))
-        playone(f4)
+        if f4.is_available == 0:
+            f4.is_available = 1
+            f4.self_video_play()
         print ('id 4 touched')
     if int(message[2]) == 5:
         my_id.locked = 1
         stopAll()
         sleep(random.uniform(0, 3))
-        playone(f5)
+        if f5.is_available == 0:
+            f5.is_available = 1
+            f5.self_video_play()
         print ('id 5 touched')
     if int(message[2]) == 6:
         my_id.locked = 1
         stopAll()
         sleep(random.uniform(0, 3))
-        playone(f6)
+        if f6.is_available == 0:
+            f6.is_available = 1
+            f6.videoPlay()
         print ('id 6 touched')
     if int(message[2]) == 7:
         my_id.locked = 1
@@ -305,13 +313,17 @@ def derrick_osc(message, *args):
         my_id.locked = 1
         stopAll()
         sleep(random.uniform(0, 3))
-        playone(f8)
+        if f8.is_available == 0:
+            f8.is_available = 1
+            f8.videoPlay()
         print ('id 8 touched')
     if int(message[2]) == 9:
         my_id.locked = 1
         stopAll()
         sleep(random.uniform(0, 3))
-        playone(f9)
+        if f9.is_available == 0:
+            f9.is_available = 1
+            f9.videoPlay()
         print ('id 9 touched')
     if int(message[2]) == 0:
         stopAll()
