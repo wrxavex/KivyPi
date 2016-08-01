@@ -238,7 +238,7 @@ v2fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/haohaus/2.mp4")
 v3fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/haohaus/3.mp4")
 v4fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/haohaus/4.mp4")
 
-my_video = OmxVideoPlayer("0,0,1280,720", "0,0,720,480", my_id.my_movie)
+my_video = OmxVideoPlayer("0,0,1280,720", "0,0,1280,720", my_id.my_movie)
 
 
 def derrick_osc(message, *args):
