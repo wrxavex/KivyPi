@@ -9,7 +9,7 @@ import random
 
 my_id = set_id.IDSetter()
 my_id.set_to_new_ip()
-my_id.my_movie = "/home/pi/haohaus/"+my_id+".mp4"
+my_id.my_movie = "/home/pi/haohaus/"+str(my_id)+".mp4"
 print(my_id.my_movie)
 
 serviceport = 8999
