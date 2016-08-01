@@ -62,7 +62,6 @@ class DerrickWidget(Widget):
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.239', port=activityport)
 
 
-
 def stopFS():
     if v1fs.is_available == 1:
         stopVideo(v1fs)
@@ -221,25 +220,25 @@ class OmxVideoPlayer:
             self.proc.stdin.write('q')
 
 
-v1 = OmxVideoPlayer("0,0,400,240", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/1.mp4", 1)
-v2 = OmxVideoPlayer("400,0,800,240", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/2.mp4", 2)
-v3 = OmxVideoPlayer("0,240,400,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/3.mp4", 3)
-v4 = OmxVideoPlayer("400,240,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/4.mp4", 4)
+v1 = OmxVideoPlayer("0,0,400,240", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/1.mp4", 1)
+v2 = OmxVideoPlayer("400,0,800,240", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/2.mp4", 2)
+v3 = OmxVideoPlayer("0,240,400,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/3.mp4", 3)
+v4 = OmxVideoPlayer("400,240,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/4.mp4", 4)
 
-f1 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/1.mp4", 1)
-f2 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/2.mp4", 2)
-f3 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/3.mp4", 3)
-f4 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/4.mp4", 4)
-f5 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/5.mp4", 5)
-f6 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/6.mp4", 6)
-f7 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/7.mp4", 7)
-f8 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/8.mp4", 8)
-f9 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/newTaipei/9.mp4", 9)
+f1 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/1.mp4", 1)
+f2 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/2.mp4", 2)
+f3 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/3.mp4", 3)
+f4 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/4.mp4", 4)
+f5 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/5.mp4", 5)
+f6 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/6.mp4", 6)
+f7 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/7.mp4", 7)
+f8 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/8.mp4", 8)
+f9 = OmxVideoPlayer("0,0,800,480", croparea_setter(my_id.id_to_set), "/home/pi/haohaus/9.mp4", 9)
 
-v1fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/1.mp4", 1)
-v2fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/2.mp4", 2)
-v3fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/3.mp4", 3)
-v4fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/newTaipei/4.mp4", 4)
+v1fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/haohaus/1.mp4", 1)
+v2fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/haohaus/2.mp4", 2)
+v3fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/haohaus/3.mp4", 3)
+v4fs = OmxVideoPlayer("0,0,800,480", "0,0,720,480", "/home/pi/haohaus/4.mp4", 4)
 
 my_video = OmxVideoPlayer("0,0,800,480", "0,0,720,480", my_id.my_movie, int(my_id.id_to_set))
 
