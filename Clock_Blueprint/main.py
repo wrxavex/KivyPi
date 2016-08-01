@@ -99,7 +99,6 @@ class ClockApp(App):
         self.sw_seconds = 0
 
 
-
 class ClockLayout(BoxLayout):
     time_prop = ObjectProperty(None)
 
