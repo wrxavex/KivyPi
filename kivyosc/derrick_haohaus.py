@@ -154,31 +154,31 @@ def stopVideo(videoins):
 def croparea_setter(id):
     id = int(id)
     if id == 1:
-        crop_area = "0,0,240,160"
+        crop_area = "960, 200,1280, 380"
         return crop_area
     if id == 2:
-        crop_area = "240,0,480,160"
+        crop_area = "640,0,960,180"
         return crop_area
     if id == 3:
-        crop_area = "480,0,720,160"
+        crop_area = "640,180,960,360"
         return crop_area
     if id == 4:
-        crop_area = "0,160,240,320"
+        crop_area = "640,540,960,720"
         return crop_area
     if id == 5:
-        crop_area = "240,160,480,320"
+        crop_area = "400,100,720,280"
         return crop_area
     if id == 6:
-        crop_area = "480,160,720,320"
+        crop_area = "540,360,860,540"
         return crop_area
     if id == 7:
-        crop_area = "0,320,240,480"
+        crop_area = "340,300,660,480"
         return crop_area
     if id == 8:
-        crop_area = "240,320,480,480"
+        crop_area = "300,540,620,720"
         return crop_area
     if id == 9:
-        crop_area = "480,320,720,480"
+        crop_area = "0,180,320,360"
         return crop_area
 
 
