@@ -188,7 +188,7 @@ class DerrickApp(App):
     def build(self):
         return DerrickWidget()
 
-    def random_play(self):
+    def random_play(self, nap):
         if my_video.is_playing == 1:
             my_video.videoCount = my_video.videovount + 1
             if my_video.videoCount >=120:
