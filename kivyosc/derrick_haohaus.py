@@ -63,7 +63,6 @@ class DerrickWidget(Widget):
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.239', port=activityport)
 
 
-
 def stopFS():
     if v1fs.is_available == 1:
         stopVideo(v1fs)
@@ -138,7 +137,6 @@ def playAll():
         v4.is_available = 1
         v4.videoPlay()
 
-
 def playone(omxvideo):
     if omxvideo.is_available == 0:
         omxvideo.is_available = 1
@@ -183,12 +181,43 @@ def croparea_setter(id):
 
 
 class DerrickApp(App):
+
+    def on_start(self):
+        Clock.schedule_interval(self.random_play, 1)
+
     def build(self):
         return DerrickWidget()
 
+    def random_play(self):
+        if my_video.is_playing == 1:
+            my_video.videoCount = my_video.Videovount + 1
+            if my_video.videoCount >=120:
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.231', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.232', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.233', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.234', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.235', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.236', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.237', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.238', port=serviceport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.239', port=serviceport)
+
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.231', port=activityport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.232', port=activityport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.233', port=activityport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.234', port=activityport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.235', port=activityport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.236', port=activityport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.237', port=activityport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.238', port=activityport)
+                osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.239', port=activityport)
+        elif my_video.is_playing == 0:
+            my_video.videoCount = 0
+
+        print('videocount %s' % my_video.videoCount)
 
 class OmxVideoPlayer:
-    VideoCount = 0
+
 
     def __init__(self, pos, crop, name):
         self.pos = pos
@@ -197,12 +226,12 @@ class OmxVideoPlayer:
         self.is_available = 0
         self.proc = 0
         self.crop = crop
+        self.videoCount = 0
         OmxVideoPlayer.VideoCount += 1
 
     def videoPlay(self):
             # self.proc = subprocess.Popen(['omxplayer', '--orientation', '270', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop], stdin=subprocess.PIPE)
             self.proc = subprocess.Popen(['omxplayer', self.name, '--aspect-mode', 'fill', '--crop', self.crop, '--orientation', '270', '--no-osd', '--loop'], stdin=subprocess.PIPE)
-
 
     def self_video_play(self):
         self.proc = subprocess.Popen(
@@ -248,7 +277,7 @@ def derrick_osc(message, *args):
 
     else:
         if my_id.locked == 0:
-            Clock.schedule_once(osc_all_play_yourself, 90)
+            Clock.schedule_once(osc_all_play_yourself, 60)
             my_id.locked = 1
     print('got message', message[2])
 
