@@ -218,7 +218,6 @@ class DerrickApp(App):
 
 class OmxVideoPlayer:
 
-
     def __init__(self, pos, crop, name):
         self.pos = pos
         self.name = name
@@ -227,7 +226,7 @@ class OmxVideoPlayer:
         self.proc = 0
         self.crop = crop
         self.videoCount = 0
-        OmxVideoPlayer.VideoCount += 1
+        OmxVideoPlayer.videoCount += 1
 
     def videoPlay(self):
             # self.proc = subprocess.Popen(['omxplayer', '--orientation', '270', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop], stdin=subprocess.PIPE)
@@ -239,7 +238,7 @@ class OmxVideoPlayer:
             stdin=subprocess.PIPE)
 
     def videoCount(self):
-        print (OmxVideoPlayer.VideoCount)
+        print (OmxVideoPlayer.videoCount)
 
     def killvideo(self):
         if self.is_playing == 1:
