@@ -190,7 +190,7 @@ class DerrickApp(App):
 
     def random_play(self):
         if my_video.is_playing == 1:
-            my_video.videoCount = my_video.Videovount + 1
+            my_video.videoCount = my_video.videovount + 1
             if my_video.videoCount >=120:
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.231', port=serviceport)
                 osc.sendMsg('/derrick/osc', dataArray=[my_id.id_to_set], ipAddr='192.168.1.232', port=serviceport)
