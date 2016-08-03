@@ -229,11 +229,11 @@ class OmxVideoPlayer:
 
     def videoPlay(self):
             # self.proc = subprocess.Popen(['omxplayer', '--orientation', '270', '--no-osd', '--loop', '--win', self.pos, self.name, '--crop', self.crop], stdin=subprocess.PIPE)
-            self.proc = subprocess.Popen(['omxplayer', self.name, '--aspect-mode', 'fill', '--crop', self.crop, '--orientation', '270', '--no-osd', '--loop'], stdin=subprocess.PIPE)
+            self.proc = subprocess.Popen(['omxplayer', self.name, '--no-osd', '--aspect-mode', 'fill', '--crop', self.crop, '--orientation', '270', '--loop'], stdin=subprocess.PIPE)
 
     def self_video_play(self):
         self.proc = subprocess.Popen(
-            ['omxplayer', '--aspect-mode', 'fill', '--no-osd', '--loop', self.name, '--crop', self.crop],
+            ['omxplayer', self.name, '--no-osd', '--aspect-mode', 'fill', '--loop' '--crop', self.crop],
             stdin=subprocess.PIPE)
 
     def videoCount(self):
